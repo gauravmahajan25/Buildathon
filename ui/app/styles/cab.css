@@ -1,0 +1,11 @@
+.cab-header
+{
+  width: 100%;
+  z-index: 0;
+  height:150px;
+}
+
+.searchWidget
+{
+  margin-top: 50px;
+}
