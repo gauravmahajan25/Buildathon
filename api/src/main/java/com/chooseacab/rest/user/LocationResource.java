@@ -50,9 +50,12 @@ public class LocationResource {
         try {
             List<LocationRepresentation> representations = locationRepresentationService.getAllLocations();
 
-            if(representations == null){
-                return Response.status(Response.Status.NOT_FOUND).type(MediaType.APPLICATION_JSON_TYPE)
-                        .entity("Resource Not Found.").build();
+            if(representations.isEmpty()){
+              final SystemMessage message =
+                  SystemMessage.createSystemMessage(messageSource,
+                                                    ResourceBundleEnum.NOT_FOUND);
+              return Response.status(Response.Status.NOT_FOUND).type(MediaType.APPLICATION_JSON_TYPE)
+                  .entity(message).build();
             }
 
             return Response.status(Response.Status.OK)
