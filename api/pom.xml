@@ -272,6 +272,11 @@
             <artifactId>json</artifactId>
             <version>20140107</version>
         </dependency>
+        <dependency>
+            <groupId>com.chooseacab.domain</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
