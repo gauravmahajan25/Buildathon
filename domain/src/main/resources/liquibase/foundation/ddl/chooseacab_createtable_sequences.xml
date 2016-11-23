@@ -20,8 +20,13 @@
 			incrementBy="1" schemaName="chooseacab" startWith="100" tableName="cc_locations" />
 	</changeSet>
 	
-	<changeSet id="cc_cab_details_id_increment" author="chooseacab">
+	<changeSet id="cc_fare_details_id_increment" author="chooseacab">
 		<addAutoIncrement columnDataType="int" columnName="id"
-			incrementBy="1" schemaName="chooseacab" startWith="100" tableName="cc_cab_details" />
+			incrementBy="1" schemaName="chooseacab" startWith="100" tableName="cc_fare_details" />
+	</changeSet>
+	
+	<changeSet id="cc_ride_details_id_increment" author="chooseacab">
+		<addAutoIncrement columnDataType="int" columnName="id"
+			incrementBy="1" schemaName="chooseacab" startWith="100" tableName="cc_ride_details" />
 	</changeSet>
 </databaseChangeLog>
