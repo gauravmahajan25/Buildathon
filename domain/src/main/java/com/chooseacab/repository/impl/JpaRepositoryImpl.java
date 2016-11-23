@@ -38,7 +38,7 @@ public abstract class JpaRepositoryImpl<T> implements JpaRepository<T> {
     protected EntityManager entityManager;
 
     @SuppressWarnings("rawtypes")
-    final private List EMPTY_LIST = Collections
+    private static final  List EMPTY_LIST = Collections
             .unmodifiableList(new ArrayList<T>());
 
     @Autowired(required = false)
@@ -66,13 +66,11 @@ public abstract class JpaRepositoryImpl<T> implements JpaRepository<T> {
                 new Object[] { getElementType().getName() });
 
         Query findQuery = entityManager.createQuery(findQueryStr);
-        List<T> resultList = findQuery.getResultList();
-        return resultList;
+        return findQuery.getResultList();        
     }
 
     public T findById(Object id) {
-        T rmbModelElement = entityManager.find(getElementType(), id);
-        return rmbModelElement;
+    	return entityManager.find(getElementType(), id);        
     }
 
     public T makePersist(T entity) {
@@ -91,8 +89,8 @@ public abstract class JpaRepositoryImpl<T> implements JpaRepository<T> {
     }
 
     // @NotNull
-    final public Criteria createCriteria(final String p_sAlias) {
-        if (StringUtils.isBlank(p_sAlias)) {
+    public final Criteria createCriteria(final String pSalias) {
+        if (StringUtils.isBlank(pSalias)) {
             return createCriteria();
         } else {
             return ((Session)getEntityManager().getDelegate()).createCriteria(elementType, p_sAlias);

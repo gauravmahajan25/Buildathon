@@ -10,12 +10,22 @@ import java.util.List;
  */
 public class LocationRepresentation {
 
-  public Long id;
+  private Long id;
 
-  public String name;
+  private String name;
 
   private Integer zipCode;
 
+  public LocationRepresentation(){
+	  //default constructor
+  }
+  
+  public LocationRepresentation(Location location){
+    setId(location.getId());
+    setName(location.getName());
+    setZipCode(location.getZipCode());
+  }
+  
   public Long getId() {
     return id;
   }
@@ -38,16 +48,6 @@ public class LocationRepresentation {
 
   public void setZipCode(Integer zipCode) {
     this.zipCode = zipCode;
-  }
-
-  public LocationRepresentation(){
-
-  }
-
-  public LocationRepresentation(Location location){
-    setId(location.getId());
-    setName(location.getName());
-    setZipCode(location.getZipCode());
   }
 
   public static List<LocationRepresentation> toRepresentations(List<Location> locations){
