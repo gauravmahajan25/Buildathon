@@ -13,9 +13,7 @@
     locationService.query(function(data) {
       $scope.locations = data;
     });
-    console.log("Entered..............");
     $scope.searchCabs = function (search) {
-      console.log("Search..............");
       cabService.get(search,
                      function (resp) {
                        $scope.cabsList = resp.cabs;
