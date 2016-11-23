@@ -38,7 +38,7 @@
     </bean>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${chooseacab.db.driver}"/>
+        <property name="driverClassName" value="${chooseacab.db.driver}" />
         <property name="url" value="${chooseacab.db.driverUrl}${zeroes.db.url}"/>
         <property name="username" value="${chooseacab.db.user}"/>
         <property name="password" value="${chooseacab.db.password}"/>
