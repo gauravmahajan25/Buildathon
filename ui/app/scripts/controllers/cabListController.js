@@ -2,17 +2,18 @@
   "use strict";
   angular.module("findACab")
     .controller("CabListController",
-                ["$scope","cabService","cabTypeService","cabOperatorService",
+                ["$scope","cabService","cabTypeService","cabOperatorService","locationService",
                  CabListController]);
 
 
-  function CabListController($scope,cabService,cabTypeService,cabOperatorService) {
+  function CabListController($scope,cabService,cabTypeService,cabOperatorService,locationService) {
     $scope.search = {};
     $scope.cabTypes = cabTypeService.getTypes();
     $scope.cabOperators = cabOperatorService.getOperators();
-    console.log("Entered..............");
+    locationService.query(function(data) {
+      $scope.locations = data;
+    });
     $scope.searchCabs = function (search) {
-      console.log("Search..............");
       cabService.get(search,
                      function (resp) {
                        $scope.cabsList = resp.cabs;
