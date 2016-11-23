@@ -10,8 +10,8 @@ import java.io.Serializable;
  * Entity of Fair Details table.
  */
 @Entity
-@Table(name = "CC_FAIR_DETAILS")
-public class FairDetails implements Serializable {
+@Table(name = "CC_FARE_DETAILS")
+public class FareDetails implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -78,11 +78,11 @@ public class FairDetails implements Serializable {
             return true;
         }
 
-        if (!(o instanceof FairDetails)) {
+        if (!(o instanceof FareDetails)) {
             return false;
         }
 
-        final FairDetails other = (FairDetails) o;
+        final FareDetails other = (FareDetails) o;
 
         return new EqualsBuilder()
                 .append(this.getOperator(), other.getOperator())

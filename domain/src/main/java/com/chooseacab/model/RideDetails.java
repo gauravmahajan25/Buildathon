@@ -19,16 +19,16 @@ public class RideDetails implements Serializable {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "CC_SOURCE_ID")
+    @JoinColumn(name = "CC_SOURCE_LOC_ID")
     private Location sourceLocation;
 
     @ManyToOne
-    @JoinColumn(name = "CC_DESTINATION_ID")
+    @JoinColumn(name = "CC_DESTINATION_LOC_ID")
     private Location destinationLocation;
 
     @ManyToOne
-    @JoinColumn(name = "CC_FAIR_ID")
-    private FairDetails fairDetails;
+    @JoinColumn(name = "CC_FARE_ID")
+    private FareDetails fareDetails;
 
     public Long getId() {
         return id;
@@ -54,12 +54,12 @@ public class RideDetails implements Serializable {
         this.destinationLocation = destinationLocation;
     }
 
-    public FairDetails getFairDetails() {
-        return fairDetails;
+    public FareDetails getFareDetails() {
+        return fareDetails;
     }
 
-    public void setFairDetails(FairDetails fairDetails) {
-        this.fairDetails = fairDetails;
+    public void setFareDetails(FareDetails fareDetails) {
+        this.fareDetails = fareDetails;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class RideDetails implements Serializable {
         return new EqualsBuilder()
                 .append(this.getSourceLocation(), other.getSourceLocation())
                 .append(this.getDestinationLocation(), other.getDestinationLocation())
-                .append(this.getFairDetails().getId(), other.getFairDetails().getId())
+                .append(this.getFareDetails().getId(), other.getFareDetails().getId())
                 .isEquals();
     }
 
@@ -86,7 +86,7 @@ public class RideDetails implements Serializable {
         return new HashCodeBuilder()
                 .append(this.getSourceLocation())
                 .append(this.getDestinationLocation())
-                .append(this.getFairDetails().getId())
+                .append(this.getFareDetails().getId())
                 .toHashCode();
     }
 }
