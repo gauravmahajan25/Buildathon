@@ -1,4 +1,4 @@
-package com.chooseacab.rest.type;
+package com.chooseacab.rest.operator;
 
 import com.chooseacab.platform.exception.NoSuchEntityException;
 import com.chooseacab.platform.exception.SystemMessage;
@@ -20,13 +20,13 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 
 /**
- * Type Resource. Handles all CRUD(Create/Update/Read/Delete) operations for http requests.
+ * Operator Resource. Handles all CRUD(Create/Update/Read/Delete) operations for http requests.
  */
-@Path(TypeResource.RESOURCE_IDENTIFIER)
-@Component(value = "typeResource")
-public class TypeResource {
+@Path(OperatorResource.RESOURCE_IDENTIFIER)
+@Component(value = "operatorResource")
+public class OperatorResource {
 
-  private static final String RESOURCE_NAME = "type";
+  private static final String RESOURCE_NAME = "operator";
 
   public static final String RESOURCE_IDENTIFIER = "" + "/" + RESOURCE_NAME;
 
@@ -39,14 +39,14 @@ public class TypeResource {
   private UriInfo uriInfo;
 
   @Autowired
-  private TypeRepresentationService typeRepresentationService;
+  private OperatorRepresentationService operatorRepresentationService;
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getTypes() {
+  public Response getOperators() {
 
     try {
-      List<TypeRepresentation> representations = typeRepresentationService.getTypes();
+      List<OperatorRepresentation> representations = operatorRepresentationService.getOperators();
 
       if (representations.isEmpty()) {
         final SystemMessage message =
@@ -68,7 +68,7 @@ public class TypeResource {
           .entity(message).build();
 
     } catch (Exception e) {
-      LOGGER.error("Exception occurred while Getting Types:", e);
+      LOGGER.error("Exception occurred while Getting Operators:", e);
       SystemMessage
           message =
           SystemMessage.createSystemMessage(messageSource, ResourceBundleEnum.DEFAULT);

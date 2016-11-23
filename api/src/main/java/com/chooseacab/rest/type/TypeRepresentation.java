@@ -14,8 +14,6 @@ public class TypeRepresentation {
 
   public String name;
 
-  private Integer zipCode;
-
   public Long getId() {
     return id;
   }

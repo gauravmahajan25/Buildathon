@@ -7,11 +7,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Entity of Location table.
+ * Entity of Operator table.
  */
 @Entity
-@Table(name = "CC_LOCATIONS")
-public class Location implements Serializable {
+@Table(name = "CC_OPERATORS")
+public class Operator implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -20,9 +20,6 @@ public class Location implements Serializable {
 
     @Column(name = "NAME")
     private String name;
-
-    @Column(name = "ZIP_CODE")
-    private int zipCode;
 
     public Long getId() {
         return id;
@@ -40,29 +37,20 @@ public class Location implements Serializable {
         this.name = name;
     }
 
-    public int getZipCode() {
-        return zipCode;
-    }
-
-    public void setZipCode(int zipCode) {
-        this.zipCode = zipCode;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
 
-        if (!(o instanceof Location)) {
+        if (!(o instanceof Operator)) {
             return false;
         }
 
-        final Location other = (Location) o;
+        final Operator other = (Operator) o;
 
         return new EqualsBuilder()
                 .append(this.getName(), other.getName())
-                .append(this.getZipCode(), other.getZipCode())
                 .isEquals();
     }
 
@@ -70,7 +58,6 @@ public class Location implements Serializable {
     public int hashCode() {
         return new HashCodeBuilder()
                 .append(this.getName())
-                .append(this.getZipCode())
                 .toHashCode();
     }
 }

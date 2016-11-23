@@ -11,7 +11,7 @@ public interface TypeJpaRepository extends JpaRepository<Type> {
 
   /**
    * Get All available Types
-   * @return list of locations
+   * @return list of types
    */
   List<Type> getTypes();
 }
