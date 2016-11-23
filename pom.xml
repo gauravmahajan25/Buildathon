@@ -28,7 +28,6 @@
         <javassist.version>3.18.2-GA</javassist.version>
         <javaVersion>1.8</javaVersion>
         <spring.framework.version>4.2.3.RELEASE</spring.framework.version>
-        <spring.security.version>3.2.8.RELEASE</spring.security.version>
         <hibernate.version>5.0.3.Final</hibernate.version>
         <hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
         <spring.data.version>1.6.0.RELEASE</spring.data.version>
@@ -43,7 +42,6 @@
         <maven.surefire>2.9</maven.surefire>
         <jackson.version>2.6.6</jackson.version>
         <jersey.version>2.13</jersey.version>
-        <guava-version>15.0</guava-version>
     </properties>
 
     <dependencies>

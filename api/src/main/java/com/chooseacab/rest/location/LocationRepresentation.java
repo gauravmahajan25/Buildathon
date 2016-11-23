@@ -1,4 +1,4 @@
-package com.chooseacab.rest.user;
+package com.chooseacab.rest.location;
 
 import com.chooseacab.model.Location;
 
