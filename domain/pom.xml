@@ -19,14 +19,8 @@
     </parent>
 
 	<properties>
-
-		<mysql.version>5.1.6</mysql.version>
+		<mysql.version>5.1.25</mysql.version>
 		<liquibase.version>3.5.3</liquibase.version>
-		<liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
-		<liquibase.url>jdbc:mysql://127.0.0.1:3306/chooseacab</liquibase.url>
-		<liquibase.username>root</liquibase.username>
-		<liquibase.password>root</liquibase.password>
-		<liquibase.changeLogFile>src/main/resources/liquibase/chooseacab_db_changelog.xml</liquibase.changeLogFile>
 	</properties>
 
 
@@ -124,7 +118,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.25</version>
+            <version>${mysql.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -153,11 +147,7 @@
 					<execution>
 						<phase>process-resources</phase>
 						<configuration>
-							<liquibase.changeLogFile>${changeLogFile}</liquibase.changeLogFile>
-							<driver>${liquibase.driver}</driver>
-							<url>${liquibase.url}</url>
-							<username>${liquibase.username}</username>
-							<password>${liquibase.password}</password>
+							<propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
 						</configuration>
 						<goals>
 							<goal>update</goal>
