@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug"
+               monitorInterval="60">
+
+    <Properties>
+        <Property name="chooseacab.api.log.location">./</Property>
+        <Property name="chooseacab.api.log.level">debug</Property>
+        <Property name="chooseacab.api.log.MaxFileSize">150MB</Property>
+        <Property name="chooseacab.api.log.MaxBackupIndex">10000</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{ISO8601} %-5p %c{5} %L %M - %X - %m%xEx%n" />
+        </Console>
+        <RollingFile name="RollingFile" fileName="logs/chooseacab-api.log"
+                     filePattern="logs/archive/chooseacab-api.%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout
+                    pattern="%d{ISO8601} %-5p %c{5}.%M:%L - %m%xEx%n">
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="${sys:chooseacab.api.log.MaxFileSize}" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.hibernate" level="info"/>
+        <Logger name="org.springframework" level="info"/>
+        <Root level="${chooseacab.api.log.level}">
+            <AppenderRef ref="RollingFile" />
+        </Root>
+    </Loggers>
+</Configuration>
