@@ -42,10 +42,10 @@ public class TypeRepresentation {
   }
 
   public static List<TypeRepresentation> toRepresentations(List<Type> types){
-    List<TypeRepresentation> representations = new ArrayList<>();
+    final List<TypeRepresentation> representations = new ArrayList<>();
 
     for(Type type:types){
-      TypeRepresentation representation = new TypeRepresentation(type);
+      final TypeRepresentation representation = new TypeRepresentation(type);
       representations.add(representation);
     }
     return representations;
