@@ -13,5 +13,7 @@
 	<include file="foundation/dml/chooseacab_cc_locations_metadata.xml" relativeToChangelogFile="true" />
 	<include file="foundation/dml/chooseacab_cc_operators_metadata.xml" relativeToChangelogFile="true" />
 	<include file="foundation/dml/chooseacab_cc_types_metadata.xml" relativeToChangelogFile="true" />
+	<include file="foundation/dml/chooseacab_cc_fare_details_metadata.xml" relativeToChangelogFile="true" />
+	<include file="foundation/dml/chooseacab_cc_ride_details_metadata.xml" relativeToChangelogFile="true" />
 
 </databaseChangeLog>
