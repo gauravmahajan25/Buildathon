@@ -13,7 +13,7 @@
     .run(function($location ,$rootScope) {
       var port = $location.port();
       //var port ="9090"; //local
-      $rootScope.apiPath =  $location.protocol()+ "://"+ $location.host()+":"+ port +"/chooseacab/api";
+      $rootScope.apiPath =  $location.protocol()+ "://"+ $location.host()+":"+ port +"/chooseacab-api/api";
     })
 
     .config(function ($routeProvider) {
