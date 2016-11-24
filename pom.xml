@@ -27,7 +27,7 @@
         <testNgVersion>6.1.1</testNgVersion>
         <mockito.version>1.9.0</mockito.version>
         <javassist.version>3.18.2-GA</javassist.version>
-        <javaVersion>1.8</javaVersion>
+        <javaVersion>1.7</javaVersion>
         <spring.framework.version>4.2.3.RELEASE</spring.framework.version>
         <hibernate.version>5.0.3.Final</hibernate.version>
         <hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
@@ -46,6 +46,12 @@
         <frontend-maven-plugin-version>1.0</frontend-maven-plugin-version>
         <node-version>v4.4.7</node-version>
         <npm-version>3.10.5</npm-version>
+		<liquibase.version>3.5.3</liquibase.version>
+		<liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
+		<liquibase.url>jdbc:mysql://127.0.0.1:3306/chooseacab</liquibase.url>
+		<liquibase.username>root</liquibase.username>
+		<liquibase.password>root</liquibase.password>
+		<liquibase.changeLogFile>domain/src/main/resources/liquibase/chooseacab_db_changelog.xml</liquibase.changeLogFile>
     </properties>
 
     <dependencies>

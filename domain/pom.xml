@@ -18,7 +18,19 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <dependencies>
+	<properties>
+
+		<mysql.version>5.1.6</mysql.version>
+		<liquibase.version>3.5.3</liquibase.version>
+		<liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
+		<liquibase.url>jdbc:mysql://127.0.0.1:3306/chooseacab</liquibase.url>
+		<liquibase.username>root</liquibase.username>
+		<liquibase.password>root</liquibase.password>
+		<liquibase.changeLogFile>src/main/resources/liquibase/chooseacab_db_changelog.xml</liquibase.changeLogFile>
+	</properties>
+
+
+	<dependencies>
 
         <!--Spring framework-->
         <dependency>
@@ -130,5 +142,30 @@
             <version>${hibernate.version}</version>
         </dependency>
     </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.version}</version>
+				<executions>
+					<execution>
+						<phase>process-resources</phase>
+						<configuration>
+							<liquibase.changeLogFile>${changeLogFile}</liquibase.changeLogFile>
+							<driver>${liquibase.driver}</driver>
+							<url>${liquibase.url}</url>
+							<username>${liquibase.username}</username>
+							<password>${liquibase.password}</password>
+						</configuration>
+						<goals>
+							<goal>update</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
