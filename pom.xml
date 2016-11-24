@@ -1,251 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                         http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.chooseacab</groupId>
-	<artifactId>chooseacab</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>Chooseacab Parent Module</name>
-	<description>Chooseacab Project</description>
+    <groupId>com.chooseacab</groupId>
+    <artifactId>chooseacab</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Chooseacab Parent Module</name>
+    <description>Chooseacab Project</description>
 
-	<modules>
-		<module>domain</module>
-	</modules>
+    <modules>
+        <module>domain</module>
+        <module>api</module>
+        <module>ui</module>
+    </modules>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<junit.version>4.12</junit.version>
-		<slf4j.version>1.7.12</slf4j.version>
-		<apache.log4j2>2.4.1</apache.log4j2>
-		<testNgVersion>6.1.1</testNgVersion>
-		<mockito.version>1.9.0</mockito.version>
-		<javassist.version>3.18.2-GA</javassist.version>
-		<javaVersion>1.7</javaVersion>
-		<spring.framework.version>4.2.3.RELEASE</spring.framework.version>
-		<spring.security.version>3.2.8.RELEASE</spring.security.version>
-		<hibernate.version>5.0.3.Final</hibernate.version>
-		<hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
-		<spring.data.version>1.6.0.RELEASE</spring.data.version>
-		<dbunit.version>2.4.8</dbunit.version>
-		<hsqldb.version>2.0.0</hsqldb.version>
-		<commons-dbcp.version>1.4</commons-dbcp.version>
-		<oracle.ojdbc.version>12.1.0.2.0</oracle.ojdbc.version>
-		<jackson.all>1.8.5</jackson.all>
-		<javax.validation>1.0.0.GA</javax.validation>
-		<ehcache.version>2.10.1</ehcache.version>
-		<commons.codec>1.10</commons.codec>
-		<maven.surefire>2.9</maven.surefire>
-		<jackson.version>2.6.6</jackson.version>
-		<jersey.version>2.13</jersey.version>
-		<guava-version>15.0</guava-version>
-		<mysql.version>5.1.6</mysql.version>
+        <junit.version>4.12</junit.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <apache.log4j2>2.4.1</apache.log4j2>
+        <testNgVersion>6.1.1</testNgVersion>
+        <mockito.version>1.9.0</mockito.version>
+        <javassist.version>3.18.2-GA</javassist.version>
+        <javaVersion>1.7</javaVersion>
+        <spring.framework.version>4.2.3.RELEASE</spring.framework.version>
+        <hibernate.version>5.0.3.Final</hibernate.version>
+        <hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
+        <spring.data.version>1.6.0.RELEASE</spring.data.version>
+        <dbunit.version>2.4.8</dbunit.version>
+        <hsqldb.version>2.0.0</hsqldb.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <oracle.ojdbc.version>12.1.0.2.0</oracle.ojdbc.version>
+        <jackson.all>1.8.5</jackson.all>
+        <javax.validation>1.0.0.GA</javax.validation>
+        <ehcache.version>2.10.1</ehcache.version>
+        <commons.codec>1.10</commons.codec>
+        <maven.surefire>2.9</maven.surefire>
+        <jackson.version>2.6.6</jackson.version>
+        <jersey.version>2.13</jersey.version>
+        <frontend-maven-plugin-version>1.0</frontend-maven-plugin-version>
+        <node-version>v4.4.7</node-version>
+        <npm-version>3.10.5</npm-version>
 		<liquibase.version>3.5.3</liquibase.version>
 		<liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
 		<liquibase.url>jdbc:mysql://127.0.0.1:3306/chooseacab</liquibase.url>
 		<liquibase.username>root</liquibase.username>
 		<liquibase.password>root</liquibase.password>
 		<liquibase.changeLogFile>domain/src/main/resources/liquibase/chooseacab_db_changelog.xml</liquibase.changeLogFile>
-	</properties>
+    </properties>
 
-	<dependencies>
+    <dependencies>
 
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<!-- Replace with the version of the MySQL driver you want to use -->
-			<version>${mysql.version}</version>
-		</dependency>
+    <!-- JUnit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-		<!-- JUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
+    <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.5</version>
+    </dependency>
 
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.5</version>
-		</dependency>
+    <!-- Logging  -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>
 
-		<!-- Logging -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-slf4j-impl</artifactId>
+	    <version>${apache.log4j2}</version>
+	</dependency>
 
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>${apache.log4j2}</version>
-		</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	    <version>${apache.log4j2}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>${apache.log4j2}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-jcl</artifactId>
+	    <version>${apache.log4j2}</version>
+	</dependency>
 
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${apache.log4j2}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${apache.log4j2}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-jcl</artifactId>
-			<version>${apache.log4j2}</version>
-		</dependency>
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>${testNgVersion}</version>
+        <scope>test</scope>
+    </dependency>
 
-		<!-- TestNG -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>${testNgVersion}</version>
-			<scope>test</scope>
-		</dependency>
+    <!-- Mockito -->
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-		<!-- Mockito -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>${mockito.version}</version>
-			<scope>test</scope>
-		</dependency>
+    <!-- SpringFramework -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.framework.version}</version>
 
-		<!-- SpringFramework -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.framework.version}</version>
+        <scope>test</scope>
+    </dependency>
 
-			<scope>test</scope>
-		</dependency>
+    <dependency>
+        <groupId>org.javassist</groupId>
+        <artifactId>javassist</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-		</dependency>
+    </dependencies>
 
-	</dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>jboss-common-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc7</artifactId>
+                <version>${oracle.ojdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring.data.version}</version>
+            </dependency>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.javassist</groupId>
-				<artifactId>javassist</artifactId>
-				<version>${javassist.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-entitymanager</artifactId>
-				<version>${hibernate.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>jboss</groupId>
-						<artifactId>jboss-common-core</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>com.oracle</groupId>
-				<artifactId>ojdbc7</artifactId>
-				<version>${oracle.ojdbc.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-jpa</artifactId>
-				<version>${spring.data.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.dbunit</groupId>
+                <artifactId>dbunit</artifactId>
+                <version>${dbunit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validation}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-framework-bom</artifactId>
-				<version>${spring.framework.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.dbunit</groupId>
-				<artifactId>dbunit</artifactId>
-				<version>${dbunit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>javax.validation</groupId>
-				<artifactId>validation-api</artifactId>
-				<version>${javax.validation}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire}</version>
+                    <configuration>
+                        <forkMode>pertest</forkMode>
+                        <argLine>-Xms512m -Xmx1024m</argLine>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>${maven.surefire.plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>${javaVersion}</source>
+                    <target>${javaVersion}</target>
+                </configuration>
+            </plugin>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${maven.surefire}</version>
-					<configuration>
-						<forkMode>pertest</forkMode>
-						<argLine>-Xms512m -Xmx1024m</argLine>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-report-plugin</artifactId>
-					<version>${maven.surefire.plugin}</version>
-				</plugin>
-
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
-				<configuration>
-					<source>${javaVersion}</source>
-					<target>${javaVersion}</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>1.3.1</version>
-				<executions>
-					<execution>
-						<id>enforce-versions</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<requireJavaVersion>
-									<version>${javaVersion}</version>
-								</requireJavaVersion>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-
-		</plugins>
-	</build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.3.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>${javaVersion}</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

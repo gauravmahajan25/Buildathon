@@ -12,9 +12,9 @@
             http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-    <context:component-scan base-package="com.zeroes.service" />
-    <context:component-scan base-package="com.zeroes.platform" />
-    <context:component-scan base-package="com.zeroes.repository" />
+    <context:component-scan base-package="com.chooseacab.service" />
+    <context:component-scan base-package="com.chooseacab.platform" />
+    <context:component-scan base-package="com.chooseacab.repository" />
     <context:component-scan base-package="com.chooseacab.model" />
 
     <tx:annotation-driven transaction-manager="transactionManager"/>

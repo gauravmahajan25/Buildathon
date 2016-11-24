@@ -17,7 +17,7 @@
                 <entry key="hibernate.jdbc.batch_size" value="1000"/>
                 <entry key="hibernate.order_inserts" value="true"/>
                 <entry key="hibernate.order_updates" value="true"/>
-                <entry key="hibernate.cache.use_second_level_cache" value="true"/>
+                <entry key="hibernate.cache.use_second_level_cache" value="false"/>
             </map>
         </property>
         <property name="jpaVendorAdapter">
@@ -38,8 +38,8 @@
     </bean>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${chooseacab.db.driver}" />
-        <property name="url" value="${chooseacab.db.driverUrl}${zeroes.db.url}"/>
+        <property name="driverClassName" value="${chooseacab.db.driver}"/>
+        <property name="url" value="${chooseacab.db.driverUrl}${chooseacab.db.url}"/>
         <property name="username" value="${chooseacab.db.user}"/>
         <property name="password" value="${chooseacab.db.password}"/>
         <property name="validationQuery" value="${chooseacab.db.validationQuery}"/>
