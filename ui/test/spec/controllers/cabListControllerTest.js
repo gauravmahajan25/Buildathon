@@ -24,7 +24,7 @@ describe('Controller: CabListController', function () {
           return defer.promise;
         };
 
-        mockCabServiceabTypeService.search = function () {
+        mockCabTypeService.search = function () {
           var defer = $q.defer();
           defer.resolve([{
             "id": 101,
