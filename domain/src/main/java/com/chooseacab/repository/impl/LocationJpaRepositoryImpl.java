@@ -15,9 +15,6 @@ public class LocationJpaRepositoryImpl extends JpaRepositoryImpl<Location>
     @Override
     public List<Location> getAllLocations(){
         Criteria criteria = createCriteria();
-
-        List<Location> locations = criteria.list();
-
-        return locations;
+        return criteria.list();
     }
 }
