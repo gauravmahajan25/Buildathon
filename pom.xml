@@ -27,7 +27,7 @@
         <testNgVersion>6.1.1</testNgVersion>
         <mockito.version>1.9.0</mockito.version>
         <javassist.version>3.18.2-GA</javassist.version>
-        <javaVersion>1.8</javaVersion>
+        <javaVersion>1.7</javaVersion>
         <spring.framework.version>4.2.3.RELEASE</spring.framework.version>
         <hibernate.version>5.0.3.Final</hibernate.version>
         <hibernate.validator.version>4.2.0.Final</hibernate.validator.version>

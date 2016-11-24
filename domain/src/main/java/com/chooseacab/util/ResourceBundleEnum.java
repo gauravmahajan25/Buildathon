@@ -9,7 +9,7 @@ public enum ResourceBundleEnum {
   NOT_FOUND("not.found")
   ;
 
-  private final static Map<String, ResourceBundleEnum> resourceBundleEnumsByMessageId = new HashMap<String, ResourceBundleEnum>(ResourceBundleEnum.values().length);
+  private static final Map<String, ResourceBundleEnum> resourceBundleEnumsByMessageId = new HashMap<>(ResourceBundleEnum.values().length);
 
   static {
     for (ResourceBundleEnum e : ResourceBundleEnum.values()) {
