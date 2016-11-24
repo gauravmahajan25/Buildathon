@@ -43,7 +43,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("id").asText(), "1001");
         Assert.assertEquals(rootNode.findValue("operatorName").asText(), "OLA");
         Assert.assertEquals(rootNode.findValue("typeName").asText(), "SUV");
-        Assert.assertEquals(rootNode.findValue("fair").asText(), "10.0");
+        Assert.assertEquals(rootNode.findValue("fare").asText(), "10.0");
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
@@ -62,7 +62,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("id").asText(), "1001");
         Assert.assertEquals(rootNode.findValue("operatorName").asText(), "OLA");
         Assert.assertEquals(rootNode.findValue("typeName").asText(), "SUV");
-        Assert.assertEquals(rootNode.findValue("fair").asText(), "10.0");
+        Assert.assertEquals(rootNode.findValue("fare").asText(), "10.0");
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
@@ -90,7 +90,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("id").asText(), "1001");
         Assert.assertEquals(rootNode.findValue("operatorName").asText(), "OLA");
         Assert.assertEquals(rootNode.findValue("typeName").asText(), "SUV");
-        Assert.assertEquals(rootNode.findValue("fair").asText(), "10.0");
+        Assert.assertEquals(rootNode.findValue("fare").asText(), "10.0");
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
@@ -118,7 +118,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("id").asText(), "1001");
         Assert.assertEquals(rootNode.findValue("operatorName").asText(), "OLA");
         Assert.assertEquals(rootNode.findValue("typeName").asText(), "SUV");
-        Assert.assertEquals(rootNode.findValue("fair").asText(), "10.0");
+        Assert.assertEquals(rootNode.findValue("fare").asText(), "10.0");
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
@@ -146,7 +146,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("id").asText(), "1001");
         Assert.assertEquals(rootNode.findValue("operatorName").asText(), "OLA");
         Assert.assertEquals(rootNode.findValue("typeName").asText(), "SUV");
-        Assert.assertEquals(rootNode.findValue("fair").asText(), "10.0");
+        Assert.assertEquals(rootNode.findValue("fare").asText(), "10.0");
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
@@ -177,7 +177,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("id").asText(), "1001");
         Assert.assertEquals(rootNode.findValue("operatorName").asText(), "OLA");
         Assert.assertEquals(rootNode.findValue("typeName").asText(), "SUV");
-        Assert.assertEquals(rootNode.findValue("fair").asText(), "10.0");
+        Assert.assertEquals(rootNode.findValue("fare").asText(), "10.0");
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
