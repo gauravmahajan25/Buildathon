@@ -8,15 +8,23 @@
 
   function CabListController($scope,cabService,cabTypeService,cabOperatorService,locationService) {
     $scope.search = {};
-    $scope.cabTypes = cabTypeService.getTypes();
-    $scope.cabOperators = cabOperatorService.getOperators();
+    cabTypeService.query(function(data) {
+      $scope.cabTypes = cabTypeService.getTypes();
+    });
+    cabOperatorService.query(function(data) {
+      $scope.cabOperators = cabOperatorService.getOperators();
+    });
     locationService.query(function(data) {
       $scope.locations = data;
     });
+
+
     $scope.searchCabs = function (search) {
-      cabService.get(search,
+
+      $scope.submitted = true;
+      cabService.search({query: search},
                      function (resp) {
-                       $scope.cabsList = resp.cabs;
+                       $scope.cabsList = resp;
                      });
 
     };

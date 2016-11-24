@@ -3,29 +3,26 @@
   <div class="panel-body">
     <div class="searchWidget">
       <div class="container">
-        <form name="searchFrm" id="searchFrm" novalidate="novalidate">
+
+        <form name="searchFrm" id="searchFrm"  novalidate>
 
           <div class="row">
-            <div class="col-sm-10 col-xs-12">
-              <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                  <div>
-                    <select class="search-input form-control" ng-model="search.sourceId">
-                      <option value="" disabled selected>Please Select Source</option>
-                      <option ng-repeat="location in locations" ng-value="location.id">{{location.name}}</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                  <select class="search-input form-control" ng-model="search.destinationId">
-                    <option value="" disabled selected>Please Select Destination</option>
-                    <option ng-repeat="location in locations" ng-value="location.id">{{location.name}}</option>
-                  </select>
-                </div>
-              </div>
+            <div class="col-md-5" ng-class="{ 'has-error' : searchFrm.$submitted && searchFrm.sourceId.$error.required  }">
+              <select class="search-input form-control" ng-model="search.sourceId"  id="sourceId" name="sourceId"  required >
+                <option value="">Please Select Source</option>
+                <option ng-repeat="location in locations" ng-value="location.id">{{location.name}}</option>
+              </select>
+              <p class="help-block" ng-show="searchFrm.$submitted && searchFrm.sourceId.$error.required">Source is required</p>
             </div>
-            <div class="col-sm-2 col-xs-12">
-              <input type="submit" id="cab-search" class="btn btn-primary" name="search" value="Search" ng-click="searchCabs(search)">
+            <div class="col-md-5" ng-class="{ 'has-error' : searchFrm.$submitted && searchFrm.destinationId.$error.required  }">
+              <select class="search-input form-control" ng-model="search.destinationId"  id="destinationId" name="destinationId"  required >
+                <option value="">Please Select Destination</option>
+                <option ng-repeat="location in locations" ng-value="location.id">{{location.name}}</option>
+              </select>
+              <p class="help-block" ng-show="searchFrm.$submitted && searchFrm.destinationId.$error.required">Destination is required</p>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-primary" name="search" ng-click="searchCabs(search)">Get Fare</button>
             </div>
           </div>
 
@@ -34,14 +31,14 @@
               <div class="row">
                 <div class="col-sm-6 col-xs-12">
                   <div>
-                    <select class="search-input form-control" ng-model="search.selectedCabOperators" multiple>
+                    <select class="search-input form-control" ng-model="search.operatorIds" multiple>
                       <option value="" disabled selected>Please Select Cab Operator</option>
                       <option ng-repeat="cabOperator in cabOperators" ng-value="cabOperator.id">{{cabOperator.name}}</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                  <select class="search-input form-control" ng-model="search.selectedCabTypes" multiple>
+                  <select class="search-input form-control" ng-model="search.typeIds" multiple>
                     <option value="" disabled selected>Please Select Cab Type</option>
                     <option ng-repeat="cabType in cabTypes" ng-value="cabType.id">{{cabType.name}}</option>
                   </select>
@@ -59,22 +56,22 @@
 <div class="panel panel-primary">
   <div class="panel-heading">Cab Search Results</div>
   <div class="panel-body">
-    <table class="table">
+    <table class="table table-striped">
       <thead>
-      <tr>
-        <td>Operator</td>
-        <td>Cab Type</td>
-        <td>Fare</td>
-        <td>Discount</td>
-      </tr>
+        <tr>
+          <th>Operator</th>
+          <th>Cab Type</th>
+          <th>Fare</th>
+          <th>Discount</th>
+        </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Operator</td>
-        <td>Cab Type</td>
-        <td>Fare</td>
-        <td>Discount</td>
-      </tr>
+        <tr ng-repeat="cab in cabs">
+          <td>{{cab.operatorName}}</td>
+          <td>{{cab.typeName}}</td>
+          <td>{{cab.fair | currency}}</td>
+          <td>{{cab.discount}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
