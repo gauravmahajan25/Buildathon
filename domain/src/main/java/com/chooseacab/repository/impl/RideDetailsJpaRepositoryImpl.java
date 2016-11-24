@@ -34,15 +34,15 @@ public class RideDetailsJpaRepositoryImpl extends JpaRepositoryImpl<RideDetails>
 
         if (!rideDetailsSearch.getOperatorIds().isEmpty()
             || !rideDetailsSearch.getTypeIds().isEmpty()) {
-            criteria.createCriteria("fairDetails", "fairDetails");
+            criteria.createCriteria("fareDetails", "fareDetails");
         }
 
         if (!rideDetailsSearch.getOperatorIds().isEmpty()) {
-            criteria.createCriteria("fairDetails.operator", "operator");
+            criteria.createCriteria("fareDetails.operator", "operator");
         }
 
         if (!rideDetailsSearch.getTypeIds().isEmpty()) {
-            criteria.createCriteria("fairDetails.type", "type");
+            criteria.createCriteria("fareDetails.type", "type");
         }
 
         searchSourceId(rideDetailsSearch, criteria);
@@ -70,14 +70,14 @@ public class RideDetailsJpaRepositoryImpl extends JpaRepositoryImpl<RideDetails>
     private void searchOperatorIds(RideDetailsSearch rideDetailsSearch,
                                      Criteria criteria) {
         if (!rideDetailsSearch.getOperatorIds().isEmpty()) {
-            criteria.add(Restrictions.in("fairDetails.operator.id", rideDetailsSearch.getOperatorIds()));
+            criteria.add(Restrictions.in("fareDetails.operator.id", rideDetailsSearch.getOperatorIds()));
         }
     }
 
     private void searchTypeIds(RideDetailsSearch rideDetailsSearch,
                                  Criteria criteria) {
         if (!rideDetailsSearch.getTypeIds().isEmpty()) {
-            criteria.add(Restrictions.in("fairDetails.type.id", rideDetailsSearch.getTypeIds()));
+            criteria.add(Restrictions.in("fareDetails.type.id", rideDetailsSearch.getTypeIds()));
         }
     }
 }

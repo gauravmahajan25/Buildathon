@@ -47,10 +47,10 @@ public class RideDetailsResource {
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getAllLocations(@QueryParam("sourceId") final Long sourceId,
+  public Response search(@QueryParam("sourceId") final Long sourceId,
                                   @QueryParam("destinationId") final Long destinationId,
-                                  @QueryParam("operatorIds") final Set<Long> operatorIds,
-                                  @QueryParam("typeIds") final Set<Long> typeIds) {
+                                  @QueryParam("operatorId") final Set<Long> operatorIds,
+                                  @QueryParam("typeId") final Set<Long> typeIds) {
 
     try {
       final RideDetailsSearch rideDetailsSearch = new RideDetailsSearch(sourceId, destinationId,
