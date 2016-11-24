@@ -7,8 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.dialect.Dialect;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.ParameterizedType;
@@ -30,9 +29,7 @@ public abstract class JpaRepositoryImpl<T> implements JpaRepository<T> {
 	 */
 	public static final String DNA_JPA_PERSISTENT_UNIT_NAME = "chooseacab-domain";
 
-	private static final String FIND_ALL_CLAUSE = "from {0}";
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(JpaRepositoryImpl.class);
+	private static final String FIND_ALL_CLAUSE = "from {0}";	
 
 	@PersistenceContext(unitName = DNA_JPA_PERSISTENT_UNIT_NAME)
 	protected EntityManager entityManager;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="insert_cc_ride_details_metadata" author="chooseacab">
+		<insert tableName="cc_ride_details">
+			<column name="cc_source_loc_id" valueComputed="(select id from cc_locations where name = 'HYDERABAD')" />
+			<column name="cc_destination_loc_id" valueComputed="(select id from cc_locations where name = 'BANGLORE')" />
+			<column name="cc_fare_id" valueComputed="(select id from cc_fare_details where cc_operator_id = (select id from cc_operators where name = 'OLA') and cc_type_id = (select id from cc_types where name = 'SEDAN'))" />
+		</insert>
+		<insert tableName="cc_ride_details">
+			<column name="cc_source_loc_id" valueComputed="(select id from cc_locations where name = 'HYDERABAD')" />
+			<column name="cc_destination_loc_id" valueComputed="(select id from cc_locations where name = 'CHENNAI')" />
+			<column name="cc_fare_id" valueComputed="(select id from cc_fare_details where cc_operator_id = (select id from cc_operators where name = 'OLA') and cc_type_id = (select id from cc_types where name = 'HATCHBACK'))" />
+		</insert>
+		<insert tableName="cc_ride_details">
+			<column name="cc_source_loc_id" valueComputed="(select id from cc_locations where name = 'VISAKHAPATNAM')" />
+			<column name="cc_destination_loc_id" valueComputed="(select id from cc_locations where name = 'VIJAYAWADA')" />
+			<column name="cc_fare_id" valueComputed="(select id from cc_fare_details where cc_operator_id = (select id from cc_operators where name = 'OLA') and cc_type_id = (select id from cc_types where name = 'MUV'))" />
+		</insert>
+		<insert tableName="cc_ride_details">
+			<column name="cc_source_loc_id" valueComputed="(select id from cc_locations where name = 'HYDERABAD')" />
+			<column name="cc_destination_loc_id" valueComputed="(select id from cc_locations where name = 'BANGLORE')" />
+			<column name="cc_fare_id" valueComputed="(select id from cc_fare_details where cc_operator_id = (select id from cc_operators where name = 'UBER') and cc_type_id = (select id from cc_types where name = 'SEDAN'))" />
+		</insert>
+		<insert tableName="cc_ride_details">
+			<column name="cc_source_loc_id" valueComputed="(select id from cc_locations where name = 'HYDERABAD')" />
+			<column name="cc_destination_loc_id" valueComputed="(select id from cc_locations where name = 'CHENNAI')" />
+			<column name="cc_fare_id" valueComputed="(select id from cc_fare_details where cc_operator_id = (select id from cc_operators where name = 'UBER') and cc_type_id = (select id from cc_types where name = 'HATCHBACK'))" />
+		</insert>
+		<insert tableName="cc_ride_details">
+			<column name="cc_source_loc_id" valueComputed="(select id from cc_locations where name = 'VISAKHAPATNAM')" />
+			<column name="cc_destination_loc_id" valueComputed="(select id from cc_locations where name = 'VIJAYAWADA')" />
+			<column name="cc_fare_id" valueComputed="(select id from cc_fare_details where cc_operator_id = (select id from cc_operators where name = 'UBER') and cc_type_id = (select id from cc_types where name = 'MUV'))" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>
