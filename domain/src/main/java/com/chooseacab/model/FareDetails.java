@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Entity of Fair Details table.
+ * Entity of Fare Details table.
  */
 @Entity
 @Table(name = "CC_FARE_DETAILS")

@@ -4,19 +4,16 @@
   angular
     .module("findACab")
     .factory("cabService",
-             ["$resource",
+             ["$resource","$rootScope",
               cabService]);
 
-  function cabService($resource) {
-    return $resource("http://localhost:9090/chooseacab/api/ride-details:query",{query:'@query'},
+  function cabService($resource, $rootScope) {
+    return $resource($rootScope.apiPath + "/ride-details",
                                      {
-                                       search: {
-                                         method: 'GET',
-                                         params: {
-                                           action: "search",
-                                           query: '@query'
-                                         }
-                                       }
+                                       sourceId: '@sourceId',
+                                       destinationId: '@destinationId',
+                                       operatorIds: '@operatorIds',
+                                       typeIds:'@typeIds'
                                      });
   }
 

@@ -4,11 +4,11 @@
   angular
     .module("findACab")
     .factory("cabTypeService",
-             ["$resource",
+             ["$resource","$rootScope",
               cabTypeService]);
 
-  function cabTypeService($resource) {
-    return $resource("http://localhost:9090/chooseacab/api/type")
+  function cabTypeService($resource, $rootScope) {
+    return $resource($rootScope.apiPath + "/type")
   }
 
 }());

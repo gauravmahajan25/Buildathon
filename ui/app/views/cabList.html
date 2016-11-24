@@ -5,7 +5,13 @@
       <div class="container">
 
         <form name="searchFrm" id="searchFrm"  novalidate>
-
+          <div class="row">
+            <div class="col-md-10">
+              <div class="alert alert-danger" ng-if="(search.sourceId) && search.sourceId == search.destinationId">
+                Source and destination cannot be same.
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-5" ng-class="{ 'has-error' : searchFrm.$submitted && searchFrm.sourceId.$error.required  }">
               <select class="search-input form-control" ng-model="search.sourceId"  id="sourceId" name="sourceId"  required >
@@ -22,7 +28,7 @@
               <p class="help-block" ng-show="searchFrm.$submitted && searchFrm.destinationId.$error.required">Destination is required</p>
             </div>
             <div class="col-md-2">
-              <button type="submit" class="btn btn-primary" name="search" ng-click="searchCabs(search)">Get Fare</button>
+              <button type="submit" class="btn btn-primary" name="search" ng-click="searchCabs(searchFrm)">Get Fare</button>
             </div>
           </div>
 
@@ -53,10 +59,10 @@
 </div>
 
 <!--Results-->
-<div class="panel panel-primary">
+<div class="panel panel-primary" ng-if="triggerSearch">
   <div class="panel-heading">Cab Search Results</div>
   <div class="panel-body">
-    <table class="table table-striped">
+    <table class="table table-striped" ng-if="cabList.length > 0">
       <thead>
         <tr>
           <th>Operator</th>
@@ -66,13 +72,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="cab in cabs">
+        <tr ng-repeat="cab in cabList">
           <td>{{cab.operatorName}}</td>
           <td>{{cab.typeName}}</td>
-          <td>{{cab.fair | currency}}</td>
-          <td>{{cab.discount}}</td>
+          <td>{{cab.fare | currency}}</td>
+          <td>{{cab.discount | currency}}</td>
         </tr>
       </tbody>
     </table>
+    <p ng-if="cabList.length == 0">No cabs found</p>
   </div>
 </div>
+
