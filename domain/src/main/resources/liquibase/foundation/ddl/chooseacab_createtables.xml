@@ -81,36 +81,36 @@
 	<changeSet id="add_fk_fare_operator_id" author="chooseacab">
 		<addForeignKeyConstraint baseColumnNames="cc_operator_id"
 			baseTableName="cc_fare_details" constraintName="fk_fare_operator_id"
-			deferrable="true" initiallyDeferred="true" onDelete="CASCADE"
-			onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="cc_operators" />
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_operators" />
 	</changeSet>
-	
+
 	<changeSet id="add_fk_fare_type_id" author="chooseacab">
 		<addForeignKeyConstraint baseColumnNames="cc_type_id"
 			baseTableName="cc_fare_details" constraintName="fk_fare_type_id"
-			deferrable="true" initiallyDeferred="true" onDelete="CASCADE"
-			onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="cc_types" />
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_types" />
 	</changeSet>
-	
+
 	<changeSet id="add_fk_ride_source_loc_id" author="chooseacab">
 		<addForeignKeyConstraint baseColumnNames="cc_source_loc_id"
 			baseTableName="cc_ride_details" constraintName="fk_ride_source_loc_id"
-			deferrable="true" initiallyDeferred="true" onDelete="CASCADE"
-			onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="cc_locations" />
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_locations" />
 	</changeSet>
-	
+
 	<changeSet id="add_fk_ride_destination_loc_id" author="chooseacab">
 		<addForeignKeyConstraint baseColumnNames="cc_destination_loc_id"
 			baseTableName="cc_ride_details" constraintName="fk_ride_destination_loc_id"
-			deferrable="true" initiallyDeferred="true" onDelete="CASCADE"
-			onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="cc_locations" />
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_locations" />
 	</changeSet>
-	
+
 	<changeSet id="add_fk_ride_fare_id" author="chooseacab">
 		<addForeignKeyConstraint baseColumnNames="cc_fare_id"
 			baseTableName="cc_ride_details" constraintName="fk_ride_fare_id"
-			deferrable="true" initiallyDeferred="true" onDelete="CASCADE"
-			onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="cc_fare_details" />
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_fare_details" />
 	</changeSet>
 
 </databaseChangeLog>

@@ -14,7 +14,6 @@
 
 	<modules>
 		<module>domain</module>
-		<module>api</module>
 	</modules>
 
 	<properties>
@@ -26,7 +25,7 @@
 		<testNgVersion>6.1.1</testNgVersion>
 		<mockito.version>1.9.0</mockito.version>
 		<javassist.version>3.18.2-GA</javassist.version>
-		<javaVersion>1.8</javaVersion>
+		<javaVersion>1.7</javaVersion>
 		<spring.framework.version>4.2.3.RELEASE</spring.framework.version>
 		<spring.security.version>3.2.8.RELEASE</spring.security.version>
 		<hibernate.version>5.0.3.Final</hibernate.version>
@@ -44,10 +43,23 @@
 		<jackson.version>2.6.6</jackson.version>
 		<jersey.version>2.13</jersey.version>
 		<guava-version>15.0</guava-version>
-		<liquibase.version>1.2.1</liquibase.version>
+		<mysql.version>5.1.6</mysql.version>
+		<liquibase.version>3.5.3</liquibase.version>
+		<liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
+		<liquibase.url>jdbc:mysql://127.0.0.1:3306/chooseacab</liquibase.url>
+		<liquibase.username>root</liquibase.username>
+		<liquibase.password>root</liquibase.password>
+		<liquibase.changeLogFile>domain/src/main/resources/liquibase/chooseacab_db_changelog.xml</liquibase.changeLogFile>
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<!-- Replace with the version of the MySQL driver you want to use -->
+			<version>${mysql.version}</version>
+		</dependency>
 
 		<!-- JUnit -->
 		<dependency>
@@ -197,6 +209,7 @@
 					<artifactId>maven-surefire-report-plugin</artifactId>
 					<version>${maven.surefire.plugin}</version>
 				</plugin>
+
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -231,27 +244,6 @@
 				</executions>
 			</plugin>
 
-<!-- Liquibase -->
-			<plugin>
-				<groupId>org.liquibase</groupId>
-				<artifactId>liquibase-maven-plugin</artifactId>
-				<version>${liquibase.version}</version>
-				<executions>
-					<execution>
-						<phase>process-resources</phase>
-						<configuration>
-							<changeLogFile>src/main/resources/liquiabse/chooseacab_db_changelog.xml</changeLogFile>
-							<driver>com.mysql.jdbc.Driver</driver>
-							<url>jdbc:oracle:thin:@tf-appserv-linux:1521:xe</url>
-							<username>liquibaseTest</username>
-							<password>pass</password>
-						</configuration>
-						<goals>
-							<goal>update</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 
 		</plugins>
 	</build>
