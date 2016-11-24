@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="insert_cc_fare_details_metadata" author="chooseacab">
+		<insert tableName="cc_fare_details">
+			<column name="cc_operator_id" valueComputed="(select id from cc_operators where name = 'OLA')" />
+			<column name="cc_type_id" valueComputed="(select id from cc_types where name = 'SEDAN')" />
+			<column name="fare" value="10" />
+		</insert>
+		<insert tableName="cc_fare_details">
+			<column name="cc_operator_id" valueComputed="(select id from cc_operators where name = 'OLA')" />
+			<column name="cc_type_id" valueComputed="(select id from cc_types where name = 'HATCHBACK')" />
+			<column name="fare" value="7" />
+		</insert>
+		<insert tableName="cc_fare_details">
+			<column name="cc_operator_id" valueComputed="(select id from cc_operators where name = 'OLA')" />
+			<column name="cc_type_id" valueComputed="(select id from cc_types where name = 'MUV')" />
+			<column name="fare" value="15" />
+		</insert>
+		<insert tableName="cc_fare_details">
+			<column name="cc_operator_id" valueComputed="(select id from cc_operators where name = 'UBER')" />
+			<column name="cc_type_id" valueComputed="(select id from cc_types where name = 'SEDAN')" />
+			<column name="fare" value="11" />
+		</insert>
+		<insert tableName="cc_fare_details">
+			<column name="cc_operator_id" valueComputed="(select id from cc_operators where name = 'UBER')" />
+			<column name="cc_type_id" valueComputed="(select id from cc_types where name = 'HATCHBACK')" />
+			<column name="fare" value="6" />
+		</insert>
+		<insert tableName="cc_fare_details">
+			<column name="cc_operator_id" valueComputed="(select id from cc_operators where name = 'UBER')" />
+			<column name="cc_type_id" valueComputed="(select id from cc_types where name = 'MUV')" />
+			<column name="fare" value="18" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>

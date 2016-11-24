@@ -46,6 +46,12 @@
         <frontend-maven-plugin-version>1.0</frontend-maven-plugin-version>
         <node-version>v4.4.7</node-version>
         <npm-version>3.10.5</npm-version>
+		<liquibase.version>3.5.3</liquibase.version>
+		<liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
+		<liquibase.url>jdbc:mysql://127.0.0.1:3306/chooseacab</liquibase.url>
+		<liquibase.username>root</liquibase.username>
+		<liquibase.password>root</liquibase.password>
+		<liquibase.changeLogFile>domain/src/main/resources/liquibase/chooseacab_db_changelog.xml</liquibase.changeLogFile>
     </properties>
 
     <dependencies>
