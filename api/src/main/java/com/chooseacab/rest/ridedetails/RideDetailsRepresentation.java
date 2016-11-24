@@ -16,7 +16,7 @@ public class RideDetailsRepresentation {
 
   private String typeName;
 
-  private Double fair;
+  private Double fare;
 
   private Integer discount;
 
@@ -28,7 +28,7 @@ public class RideDetailsRepresentation {
     setId(rideDetails.getId());
     setOperatorName(rideDetails.getFareDetails().getOperator().getName());
     setTypeName(rideDetails.getFareDetails().getType().getName());
-    setFair(rideDetails.getFareDetails().getFare());
+    setFare(rideDetails.getFareDetails().getFare());
     setDiscount(rideDetails.getFareDetails().getDiscount());
   }
 
@@ -56,12 +56,12 @@ public class RideDetailsRepresentation {
     this.typeName = typeName;
   }
 
-  public Double getFair() {
-    return fair;
+  public Double getFare() {
+    return fare;
   }
 
-  public void setFair(Double fair) {
-    this.fair = fair;
+  public void setFare(Double fare) {
+    this.fare = fare;
   }
 
   public Integer getDiscount() {
