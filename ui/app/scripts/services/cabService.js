@@ -1,12 +1,22 @@
 (function () {
   "use strict";
-  angular.module('findACab')
-    .factory('cabService', function ($resource) {
-      return $resource("http://free.rome2rio.com/api/1.2/json/Search",
-         {
-           source: '@source',
-           destination: '@destination',
-           cabType: '@cabType'
-         });
-    });
+
+  angular
+    .module("findACab")
+    .factory("cabService",
+             ["$resource","$rootScope",
+              cabService]);
+
+  function cabService($resource, $rootScope) {
+    return $resource($rootScope.apiPath + "/ride-details",
+                                     {
+                                       sourceId: '@sourceId',
+                                       destinationId: '@destinationId',
+                                       operatorIds: '@operatorIds',
+                                       typeIds:'@typeIds'
+                                     });
+  }
+
 }());
+
+

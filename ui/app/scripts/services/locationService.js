@@ -4,11 +4,11 @@
   angular
     .module("findACab")
     .factory("locationService",
-             ["$resource",
+             ["$resource","$rootScope",
               locationService]);
 
-  function locationService($resource) {
-    return $resource("http://localhost:9090/chooseacab/api/location")
+  function locationService($resource, $rootScope) {
+    return $resource($rootScope.apiPath + "/location")
   }
 
 }());

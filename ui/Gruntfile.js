@@ -445,7 +445,16 @@ module.exports = function (grunt) {
                            src: '{,*/}*.js',
                            dest: '<%= yeoman.dist %>/scripts'
                          }]
-                       }
+                       },
+                       bower: {
+                         expand: true,
+                         dot: true,
+                         cwd: '.',
+                         dest: '<%= yeoman.dist %>',
+                         src: [
+                           'bower_components/**/*.{js,map}',
+                           'bower_components/**/*.css'
+                         ] }
                      },
 
                      // Run some tasks in parallel to speed up the build process
@@ -508,55 +517,14 @@ module.exports = function (grunt) {
     var buildTasks = [
       'clean:dist',
       'wiredep',
-      'useminPrepare',
       'concurrent:dist',
       'copy:js',
-      'postcss',
-      'ngtemplates',
-      'concat',
-      'ngAnnotate',
+      'copy:bower',
       'copy:dist',
-      //'copy:fonts',
-      'cdnify',
-      //'cssmin',
-      //'uglify'
-      'filerev',
-      'usemin',
-      'htmlmin',
       'createWarDistFolder',
       'war:chooseacabui'
     ];
-    if(grunt.option('unminified') || grunt.option('xmin'))
-    {
-      // Minification tasks do copying into dist/, so we have to do it manually
-      var copyDistFiles = grunt.config.get('copy.dist.files');
-      copyDistFiles = copyDistFiles.concat([{
-        expand: true,
-        cwd: '.tmp',
-        dest: '<%= yeoman.dist %>',
-        src: [
-          'scripts/**/*.{js,map}',
-          'styles/**/*.css'
-        ]
-      },
-       {
-         expand: true,
-         dot: true,
-         cwd: '<%= yeoman.app %>',
-         dest: '<%= yeoman.dist %>',
-         src: ['bower_components/**/*']
-       }]);
-      grunt.config.set('copy.dist.files',copyDistFiles);
 
-      var index = -1;
-      // Remove all tasks related to minification
-      ['concat','ngmin','rev','usemin','htmlmin'].forEach(function(task) {
-        if((index = buildTasks.indexOf(task)) > -1)
-        {
-          buildTasks.splice(index,1);
-        }
-      });
-    }
     return buildTasks;
   }
   grunt.registerTask('build', getBuildTasks());

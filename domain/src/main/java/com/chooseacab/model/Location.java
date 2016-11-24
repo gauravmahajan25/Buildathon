@@ -3,8 +3,14 @@ package com.chooseacab.model;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-import javax.persistence.*;
 import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Entity of Location table.
@@ -21,7 +27,7 @@ public class Location implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "ZIP_CODE")
+    @Column(name = "ZIP")
     private int zipCode;
 
     public Long getId() {

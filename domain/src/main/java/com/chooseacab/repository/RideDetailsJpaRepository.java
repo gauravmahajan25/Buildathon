@@ -6,7 +6,7 @@ import com.chooseacab.search.RideDetailsSearch;
 import java.util.List;
 
 /**
- * A repository for FairDetails entity.
+ * A repository for FareDetails entity.
  */
 public interface RideDetailsJpaRepository extends JpaRepository<RideDetails> {
 

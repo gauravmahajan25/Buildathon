@@ -8,21 +8,25 @@
                              'ngRoute',
                              'ngSanitize',
                              'ngTouch'
-    ])
+                           ])
+
+    .run(function($location ,$rootScope) {
+      var port = $location.port();
+      //var port ="9090"; //local
+      $rootScope.apiPath =  $location.protocol()+ "://"+ $location.host()+":"+ port +"/chooseacab/api";
+    })
+
     .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/cabList.html',
-        controller: 'CabListController',
-        controllerAs: 'list'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-                   redirectTo: '/'
-                 });
-  });
+
+      $routeProvider
+        .when('/', {
+          templateUrl: 'views/cabList.html',
+          controller: 'CabListController',
+          controllerAs: 'list'
+        })
+        .otherwise({
+                     redirectTo: '/'
+                   });
+    });
+
 }());
