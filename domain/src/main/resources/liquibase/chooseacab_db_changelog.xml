@@ -8,6 +8,7 @@
          
 	<include file="foundation/ddl/chooseacab_createtables.xml" relativeToChangelogFile="true" />
 	<include file="foundation/ddl/chooseacab_createtable_sequences.xml" relativeToChangelogFile="true" />
+	<include file="foundation/ddl/chooseacab_createtable_referencekeys.xml" relativeToChangelogFile="true" />
 	
 	<!-- Metadata -->
 	<include file="foundation/dml/chooseacab_cc_locations_metadata.xml" relativeToChangelogFile="true" />
