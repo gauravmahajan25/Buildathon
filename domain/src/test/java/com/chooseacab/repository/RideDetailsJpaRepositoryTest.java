@@ -1,4 +1,4 @@
-package com.mckesson.rem.domain.repository;
+package com.chooseacab.repository;
 
 import com.chooseacab.model.FareDetails;
 import com.chooseacab.model.Location;

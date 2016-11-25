@@ -1,4 +1,4 @@
-package com.mckesson.rem.domain.service;
+package com.chooseacab.service;
 
 import com.chooseacab.model.FareDetails;
 import com.chooseacab.model.Location;

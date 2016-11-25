@@ -8,6 +8,10 @@ import org.testng.annotations.Test;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * Test for location Resource.
+ * 
+ */
 public class LocationResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     @Override

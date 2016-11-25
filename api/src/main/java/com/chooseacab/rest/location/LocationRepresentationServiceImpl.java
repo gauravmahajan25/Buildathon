@@ -11,6 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 
+/**
+ * Class to implement Location Representation Service.
+ *
+ */
 @Service
 @Transactional
 public class LocationRepresentationServiceImpl implements LocationRepresentationService {
@@ -24,7 +28,7 @@ public class LocationRepresentationServiceImpl implements LocationRepresentation
     public List<LocationRepresentation> getAllLocations() {
         LOGGER.debug("Entering LocationRepresentationServiceImpl.getAllLocations");
 
-        List<Location> locations = locationService.getAllLocations();
+        final List<Location> locations = locationService.getAllLocations();
 
         LOGGER.debug("Exiting LocationRepresentationServiceImpl.getAllLocations");
 
