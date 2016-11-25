@@ -3,46 +3,67 @@ package com.chooseacab.rest.ridedetails;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Test class for Ride Details Representation
+ * 
+ */
 public class RideDetailsRepresentationTest {
 
-  @Test
-  public void testSetterAndGetter_OperatorName(){
-    RideDetailsRepresentation representation = new RideDetailsRepresentation();
-    representation.setOperatorName("OLA");
+	/**
+	 * Test case to test Operator API for Ride Details class.
+	 * 
+	 */
 
-    String operatorName = representation.getOperatorName();
+	@Test
+	public void testOperatorName() {
+		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
+		representation.setOperatorName("OLA");
 
-    Assert.assertEquals("OLA", operatorName);
-  }
+		final String operatorName = representation.getOperatorName();
 
-  @Test
-  public void testSetterAndGetter_TypeName(){
-    RideDetailsRepresentation representation = new RideDetailsRepresentation();
-    representation.setTypeName("SUV");
+		Assert.assertEquals("OLA", operatorName);
+	}
 
-    String typeName = representation.getTypeName();
+	/**
+	 * Test case to test type Name Api for Ride Details class.
+	 * 
+	 */
+	@Test
+	public void testTypeName() {
+		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
+		representation.setTypeName("SUV");
 
-    Assert.assertEquals("SUV", typeName);
-  }
+		final String typeName = representation.getTypeName();
 
-  @Test
-  public void testSetterAndGetter_Fare(){
-    double fare = 2;
-    RideDetailsRepresentation representation = new RideDetailsRepresentation();
-    representation.setFare(fare);
+		Assert.assertEquals("SUV", typeName);
+	}
 
-    double expectedFare = representation.getFare();
+	/**
+	 * Test case to test fare API for Ride Details class.
+	 * 
+	 */
+	@Test
+	public void testFare() {
+		double fare = 2;
+		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
+		representation.setFare(fare);
 
-    Assert.assertEquals(expectedFare, fare, 1);
-  }
+		final double expectedFare = representation.getFare();
 
-  @Test
-  public void testSetterAndGetter_Discount(){
-    RideDetailsRepresentation representation = new RideDetailsRepresentation();
-    representation.setDiscount(2);
+		Assert.assertEquals(expectedFare, fare, 1);
+	}
 
-    int discount = representation.getDiscount();
+	/**
+	 * Test case to test discount API for Ride Details class.
+	 * 
+	 */
+	@Test
+	public void testDiscount() {
+		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
+		representation.setDiscount(2);
 
-    Assert.assertEquals(2, discount);
-  }
+		final int discount = representation.getDiscount();
+
+		Assert.assertEquals(2, discount);
+	}
 }

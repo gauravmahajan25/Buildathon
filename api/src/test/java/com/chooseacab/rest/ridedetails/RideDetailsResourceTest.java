@@ -12,6 +12,11 @@ import java.io.InputStream;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * Test class for Ride Details Resource.
+ * 
+ *
+ */
 public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     @Override
@@ -23,14 +28,22 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         return new Class[]{RideDetailsResource.class};
     }
 
+    /**
+	 * Test case to test end point name.
+	 * 
+	 */
     @Test
-    public void test_endpointName() {
+    public void testEndpointName() {
         final String endpointName = RideDetailsResource.RESOURCE_IDENTIFIER;
         Assert.assertEquals(endpointName, "/ride-details");
     }
 
+    /**
+	 * Test case to test search api.
+	 * 
+	 */
     @Test
-    public void test_search() throws Exception {
+    public void testSearch() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .request().accept(MediaType.APPLICATION_JSON).get();
 
@@ -47,8 +60,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
+    /**
+	 * Test case to test search by source id.
+	 * 
+	 */
     @Test
-    public void test_searchBySourceId() throws Exception {
+    public void testSearchBySourceId() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("sourceId", "1001")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -66,8 +83,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
+    /**
+   	 * Negative Test case to test search by source id not found.
+   	 * 
+   	 */
     @Test
-    public void test_searchBySourceId_NotFound() throws Exception {
+    public void testSearchBySourceIdNotFound() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("sourceId", "1003")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -75,8 +96,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(Response.Status.fromStatusCode(response.getStatus()), Response.Status.NOT_FOUND);
     }
 
+    /**
+   	 * Test case to test search by destination id.
+   	 * 
+   	 */
     @Test
-    public void test_searchByDestinationId() throws Exception {
+    public void testSearchByDestinationId() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("destinationId", "1002")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -94,8 +119,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
+    /**
+   	 * Test case to test search by destination id not found.
+   	 * 
+   	 */
     @Test
-    public void test_searchByDestinationId_NotFound() throws Exception {
+    public void testSearchByDestinationIdNotFound() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("destinationId", "1003")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -103,8 +132,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(Response.Status.fromStatusCode(response.getStatus()), Response.Status.NOT_FOUND);
     }
 
+    /**
+   	 * Test case to test search by operator id.
+   	 * 
+   	 */
     @Test
-    public void test_searchByOperatorId() throws Exception {
+    public void testSearchByOperatorId() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("operatorId", "1001")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -122,8 +155,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
+    /**
+   	 * Negative Test case to test search by operator id not found.
+   	 * 
+   	 */
     @Test
-    public void test_searchByOperatorId_NotFound() throws Exception {
+    public void testSearchByOperatorIdNotFound() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("operatorId", "1003")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -131,8 +168,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(Response.Status.fromStatusCode(response.getStatus()), Response.Status.NOT_FOUND);
     }
 
+    /**
+   	 * Test case to test search by type id.
+   	 * 
+   	 */
     @Test
-    public void test_searchByTypeId() throws Exception {
+    public void testSearchByTypeId() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("typeId", "1001")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -150,8 +191,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
+    /**
+  	 * Test case to test search by type id not found.
+  	 * 
+  	 */
     @Test
-    public void test_searchByTypeId_NotFound() throws Exception {
+    public void testSearchByTypeIdNotFound() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("typeId", "1003")
             .request().accept(MediaType.APPLICATION_JSON).get();
@@ -159,8 +204,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(Response.Status.fromStatusCode(response.getStatus()), Response.Status.NOT_FOUND);
     }
 
+    /**
+  	 * Test case to test search by dependent parameter ids.
+  	 * 
+  	 */
     @Test
-    public void test_searchBySourceAndDestinationAndOperatorAndTypeId() throws Exception {
+    public void testSearchByDependentIds() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("sourceId", "1001")
             .queryParam("destinationId", "1002")
@@ -181,8 +230,12 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
         Assert.assertEquals(rootNode.findValue("discount").asText(), "2");
     }
 
+    /**
+  	 * Test case to test search by dependent id not found.
+  	 * 
+  	 */
     @Test
-    public void test_searchBySourceAndDestinationAndOperatorAndTypeId_NotFound() throws Exception {
+    public void testSearchByDependentIdsNotFound() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
             .queryParam("sourceId", "1001")
             .queryParam("destinationId", "1002")
