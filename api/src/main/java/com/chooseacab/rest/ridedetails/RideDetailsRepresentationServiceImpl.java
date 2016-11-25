@@ -13,6 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 
+/**
+ * Implementation of Ride Details Service.
+ * 
+ */
 @Service
 @Transactional
 public class RideDetailsRepresentationServiceImpl implements RideDetailsRepresentationService {
@@ -23,10 +27,10 @@ public class RideDetailsRepresentationServiceImpl implements RideDetailsRepresen
     protected RideDetailsService rideDetailsService;
 
     @Override
-    public List<RideDetailsRepresentation> searchRideDetails(RideDetailsSearch rideDetailsSearch) {
+    public List<RideDetailsRepresentation> searchRideDetails(final RideDetailsSearch rideDetailsSearch) {
         LOGGER.debug("Entering RideDetailsRepresentationServiceImpl.searchRideDetails");
 
-        List<RideDetails> rideDetails = rideDetailsService.searchRideDetails(rideDetailsSearch);
+        final List<RideDetails> rideDetails = rideDetailsService.searchRideDetails(rideDetailsSearch);
 
         LOGGER.debug("Exiting RideDetailsRepresentationServiceImpl.searchRideDetails");
 

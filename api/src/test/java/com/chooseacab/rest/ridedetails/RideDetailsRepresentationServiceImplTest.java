@@ -22,7 +22,10 @@ import java.util.HashSet;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
-
+/**
+ * Test class for Ride Details Representation Service.
+ * 
+ */
 public class RideDetailsRepresentationServiceImplTest {
 
   @Mock

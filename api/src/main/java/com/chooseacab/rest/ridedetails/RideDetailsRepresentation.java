@@ -5,7 +5,7 @@ import com.chooseacab.model.RideDetails;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
+/**
  * A resource representation class for Ride Details.
  */
 public class RideDetailsRepresentation {
@@ -21,10 +21,14 @@ public class RideDetailsRepresentation {
   private Integer discount;
 
   public RideDetailsRepresentation(){
-
+	  //default constructor.
   }
 
-  public RideDetailsRepresentation(RideDetails rideDetails){
+  /**
+   * Instantiates the RideDetails Representation based on RideDetails passed.
+   * 
+   */
+  public RideDetailsRepresentation(final RideDetails rideDetails){
     setId(rideDetails.getId());
     setOperatorName(rideDetails.getFareDetails().getOperator().getName());
     setTypeName(rideDetails.getFareDetails().getType().getName());
@@ -72,10 +76,16 @@ public class RideDetailsRepresentation {
     this.discount = discount;
   }
 
-  public static List<RideDetailsRepresentation> toRepresentations(List<RideDetails> rideDetails){
-    List<RideDetailsRepresentation> representations = new ArrayList<>();
-    for(RideDetails rideDetail:rideDetails){
-      RideDetailsRepresentation representation = new RideDetailsRepresentation(rideDetail);
+  /**
+   * Get the Ride Details Representation based on RideDetails passed.
+   * @param List - rideDetails
+   * @return List - List of Ride Details representation.
+   * 
+   */
+  public static List<RideDetailsRepresentation> toRepresentations(final List<RideDetails> rideDetails){
+    final List<RideDetailsRepresentation> representations = new ArrayList<>();
+    for(final RideDetails rideDetail:rideDetails){
+      final RideDetailsRepresentation representation = new RideDetailsRepresentation(rideDetail);
       representations.add(representation);
     }
     return representations;

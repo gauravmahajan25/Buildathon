@@ -55,7 +55,7 @@ public class RideDetailsResource {
     try {
       final RideDetailsSearch rideDetailsSearch = new RideDetailsSearch(sourceId, destinationId,
                                                                         operatorIds, typeIds);
-      List<RideDetailsRepresentation>
+      final List<RideDetailsRepresentation>
           representations =
           rideDetailsRepresentationService.searchRideDetails(rideDetailsSearch);
 
