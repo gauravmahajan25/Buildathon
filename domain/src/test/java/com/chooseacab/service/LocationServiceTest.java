@@ -8,9 +8,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 import static org.mockito.Mockito.mock;
@@ -22,29 +20,29 @@ import static org.mockito.Mockito.when;
 @Test
 public class LocationServiceTest {
 
-	private LocationJpaRepository locationJpaRepository;
+  private LocationJpaRepository locationJpaRepository;
 
-	@BeforeTest
-	public void setup() {
-		locationJpaRepository = mock(LocationJpaRepository.class);
-	}
+  @BeforeTest
+  public void setup() {
+    locationJpaRepository = mock(LocationJpaRepository.class);
+  }
 
-	/*
-	 * Test case for get all locations service method.
-	 */
-	@Test
-	public void testGetAllLocations() {
-		final Location location = new Location();
-		location.setName("LOC1");
-		location.setZipCode("143001");
+  /*
+   * Test case for get all locations service method.
+   */
+  @Test
+  public void testGetAllLocations() {
+    final Location location = new Location();
+    location.setName("LOC1");
+    location.setZipCode(143001);
 
-		final List<Location> expected = new ArrayList<>();
-		expected.add(location);
+    final List<Location> expected = new ArrayList<>();
+    expected.add(location);
 
-		when(locationJpaRepository.getAllLocations()).thenReturn(expected);
+    when(locationJpaRepository.getAllLocations()).thenReturn(expected);
 
-		final Collection<Location> actual = locationJpaRepository.getAllLocations();
+    final Collection<Location> actual = locationJpaRepository.getAllLocations();
 
-		Assert.assertEquals(actual.size(), expected.size());
-	}
+    Assert.assertEquals(actual.size(), expected.size());
+  }
 }

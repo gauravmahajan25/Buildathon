@@ -1,4 +1,4 @@
-package com.chooseacab.rest.ridedetails;
+package com.chooseacab.rest.operator;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,29 +8,29 @@ import org.junit.Test;
  */
 public class OperatorRepresentationTest {
 
-	/**
-	 * Test case for Operator Name.
-	 */
-	@Test
-	public void testOperatorName() {
-		final OperatorRepresentation representation = new OperatorRepresentation();
-		representation.setName("OLA");
+  /**
+   * Test case for Operator Name.
+   */
+  @Test
+  public void testOperatorName() {
+    final OperatorRepresentation representation = new OperatorRepresentation();
+    representation.setName("OLA");
 
-		final String operatorName = representation.getOperatorName();
+    final String operatorName = representation.getName();
 
-		Assert.assertEquals("OLA", operatorName);
-	}
+    Assert.assertEquals("OLA", operatorName);
+  }
 
-	/**
-	 * Test case for Operator Id
-	 */
-	@Test
-	public void testOperatorId() {
-		final OperatorRepresentation representation = new OperatorRepresentation();
-		representation.setId(101);
+  /**
+   * Test case for Operator Id
+   */
+  @Test
+  public void testOperatorId() {
+    final OperatorRepresentation representation = new OperatorRepresentation();
+    representation.setId(101l);
 
-		final long operatorId = representation.getId();
+    final long operatorId = representation.getId();
 
-		Assert.assertEquals(101L, operatorId);
-	}
+    Assert.assertEquals(101L, operatorId);
+  }
 }

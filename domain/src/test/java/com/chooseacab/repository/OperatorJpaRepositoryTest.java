@@ -10,9 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
@@ -25,7 +23,7 @@ import static org.mockito.Mockito.spy;
  */
 public class OperatorJpaRepositoryTest {
 
-	final OperatorJpaRepositoryImpl opearatorJpaRepository = new OperatorJpaRepositoryImpl();
+	final OperatorJpaRepositoryImpl operatorJpaRepository = new OperatorJpaRepositoryImpl();
 
 	@BeforeClass
 	protected void setUp() throws Exception {
@@ -38,7 +36,7 @@ public class OperatorJpaRepositoryTest {
 	@Test
 	public void testGetOperators() {
 		final Criteria criteria = mock(Criteria.class);
-		final OperatorsJpaRepositoryImpl spy = spy(opearatorJpaRepository);
+		final OperatorJpaRepositoryImpl spy = spy(operatorJpaRepository);
 
 		final Operator operator = new Operator();
 		operator.setName("OP1");

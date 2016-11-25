@@ -10,9 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
@@ -42,7 +40,7 @@ public class LocationJpaRepositoryTest {
 
         final Location location = new Location();
         location.setName("LOC1");
-        location.setZipCode("10101");
+        location.setZipCode(10101);
 
         final List<Location> expected= new ArrayList<>();
         expected.add(location);
@@ -51,8 +49,7 @@ public class LocationJpaRepositoryTest {
         doReturn(criteria).when(criteria).createCriteria(any(String.class));
         doReturn(expected).when(criteria).list();
 
-        final Collection<RideDetails> actual =
-            spy.getAllLocations();
+        final Collection<Location> actual = spy.getAllLocations();
 
         Assert.assertEquals(actual.size(), expected.size());
     }
