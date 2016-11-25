@@ -1,6 +1,5 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">Cab Search</div>
-  <div class="panel-body">
+<div id="search-panel" class="panel ">
+   <div class="panel-body">
     <div class="searchWidget">
       <div class="container">
 
@@ -28,14 +27,14 @@
               <p class="help-block" ng-show="searchFrm.$submitted && searchFrm.destinationId.$error.required">Destination is required</p>
             </div>
             <div class="col-md-2">
-              <button type="submit" class="btn btn-primary" name="search" ng-click="searchCabs(searchFrm,search)">Get Fare</button>
+              <button type="submit" class="btn btn-danger" name="search" ng-click="searchCabs(searchFrm,search)">Get Fare</button>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-sm-10 col-xs-12">
+            <div class="col-sm-12 col-xs-12">
               <div class="row">
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-sm-5 col-xs-12">
                   <div>
                     <select class="search-input form-control" ng-model="search.operatorId" multiple>
                       <option value="" disabled selected>Please Select Cab Operator</option>
@@ -43,11 +42,14 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-sm-5 col-xs-12">
                   <select class="search-input form-control" ng-model="search.typeId" multiple>
                     <option value="" disabled selected>Please Select Cab Type</option>
                     <option ng-repeat="cabType in cabTypes" ng-value="cabType.id">{{cabType.name}}</option>
                   </select>
+                </div>
+                <div class="col-sm-2 col-xs-12">
+                  <button type="button" class="btn btn-default" name="reset" ng-click="reset(searchFrm)">&nbsp;&nbsp;Reset &nbsp;&nbsp;</button>
                 </div>
               </div>
             </div>
@@ -58,8 +60,9 @@
   </div>
 </div>
 
+<hr>
 <!--Results-->
-<div class="panel panel-primary" ng-if="triggerSearch">
+<div id="search-results" class="panel panel-primary" ng-if="triggerSearch">
   <div class="panel-heading">Cab Search Results</div>
   <div class="panel-body">
     <table class="table table-striped" ng-if="cabList.length > 0">

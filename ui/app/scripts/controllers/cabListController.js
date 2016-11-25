@@ -2,11 +2,11 @@
   "use strict";
   angular.module("findACab")
     .controller("CabListController",
-                ["$scope", "cabService", "cabTypeService", "cabOperatorService", "locationService",
+                ["$scope", "cabService", "cabTypeService", "cabOperatorService", "locationService","$route",
                  CabListController]);
 
   function CabListController($scope, cabService, cabTypeService, cabOperatorService,
-                             locationService) {
+                             locationService, $route) {
     $scope.search = {};
     $scope.cabList = [];
 
@@ -37,6 +37,10 @@
                        });
 
     };
+
+    $scope.reset = function(){
+      $route.reload();
+    }
 
     function validate(searchForm) {
       if(searchForm.$invalid) {
