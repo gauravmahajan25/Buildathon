@@ -5,63 +5,64 @@ import com.chooseacab.model.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * A resource representation class for Type entity.
  */
 public class TypeRepresentation {
 
-	private Long id;
+  public Long id;
 
-	private String name;
+  public String name;
 
-	private Integer zipCode;
-	
-	/**
-	 * Default Constructor
-	 */
-	public TypeRepresentation() {
-		//default constructor.
-	}
+  private Integer zipCode;
 
-	/**
-	 * Instantes the Type Representation by injecting Type parameters.
-	 * 
-	 * @param Type - Type for which the representation needs to be generated.
-	 */
-	
-	public TypeRepresentation(Type type) {
-		setId(type.getId());
-		setName(type.getName());
-	}
+  /**
+   * Default Constructor
+   */
+  public TypeRepresentation() {
+    //default constructor.
+  }
 
-	public Long getId() {
-		return id;
-	}
+  /**
+   * Instantiate the Type Representation by injecting Type parameters.
+   *
+   * @param type - Type for which the representation needs to be generated.
+   */
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+  public TypeRepresentation(Type type) {
+    setId(type.getId());
+    setName(type.getName());
+  }
 
-	public String getName() {
-		return name;
-	}
+  /**
+   * Generate Type Representation list from Type List.
+   *
+   * @param types - Type List
+   * @return - Type Representation list.
+   */
+  public static List<TypeRepresentation> toRepresentations(List<Type> types) {
+    final List<TypeRepresentation> representations = new ArrayList<>();
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    for (Type type : types) {
+      final TypeRepresentation representation = new TypeRepresentation(type);
+      representations.add(representation);
+    }
+    return representations;
+  }
 
-	/**
-	 * Generate Type Representation list from Type List.
-	 * @param List - Type List
-	 * @return - Type Representation list.
-	 */
-	public static List<TypeRepresentation> toRepresentations(List<Type> types) {
-		final List<TypeRepresentation> representations = new ArrayList<>();
+  public Long getId() {
+    return id;
+  }
 
-		for (Type type : types) {
-			final TypeRepresentation representation = new TypeRepresentation(type);
-			representations.add(representation);
-		}
-		return representations;
-	}
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

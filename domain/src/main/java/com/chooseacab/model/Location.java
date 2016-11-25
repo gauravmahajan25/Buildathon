@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Entity of User table.
+ * Entity of Location table.
  */
 @Entity
 @Table(name = "CC_LOCATIONS")
@@ -27,7 +27,7 @@ public class Location implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "ZIP_CODE")
+    @Column(name = "ZIP")
     private int zipCode;
 
     public Long getId() {

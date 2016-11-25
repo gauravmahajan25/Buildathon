@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on 2016-11-21
 
-module.exports = function(config) {
+module.exports = function (config) {
   'use strict';
 
   config.set({
@@ -32,16 +32,16 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
     exclude: [
+      'node_modules/karma-ng-angular-scenario/lib/angular-scenario.js'
     ],
 
     // web server port
-    port: 8080,
+    port: 9092,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -54,6 +54,7 @@ module.exports = function(config) {
     browsers: [
       'PhantomJS'
     ],
+
 
     // Which plugins to enable
     plugins: [

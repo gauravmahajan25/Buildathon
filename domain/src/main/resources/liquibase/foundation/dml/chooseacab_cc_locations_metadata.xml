@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="insert_cc_locations_metadata" author="chooseacab">
+		<insert tableName="cc_locations">
+			<column name="name" value="HYDERABAD" />
+			<column name="zip" value="500001" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="BANGLORE" />
+			<column name="zip" value="560001" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="CHENNAI" />
+			<column name="zip" value="600001" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="AMRITSAR" />
+			<column name="zip" value="143001" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="VIJAYAWADA" />
+			<column name="zip" value="520001" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="VISAKHAPATNAM" />
+			<column name="zip" value="530003" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="TIRUPATI" />
+			<column name="zip" value="517501" />
+		</insert>
+		<insert tableName="cc_locations">
+			<column name="name" value="WARANGAL" />
+			<column name="zip" value="506002" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>

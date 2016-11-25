@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<dataset>
+    <CC_LOCATIONS ID="1001" NAME="Hyderabad" ZIP="500074" />
+    <CC_LOCATIONS ID="1002" NAME="Vijayawada" ZIP="500083" />
+
+    <CC_OPERATORS ID="1001" NAME="OLA" />
+
+    <CC_TYPES ID="1001" NAME="SUV" />
+
+    <CC_FARE_DETAILS ID="1001" FARE="10" DISCOUNT="2" CC_OPERATOR_ID="1001" CC_TYPE_ID="1001" />
+
+    <CC_RIDE_DETAILS ID="1001" CC_SOURCE_LOC_ID="1001" CC_DESTINATION_LOC_ID="1002" CC_FARE_ID="1001" />
+
+
+    <CC_LOCATIONS/>
+    <CC_OPERATORS/>
+    <CC_FARE_DETAILS/>
+    <CC_RIDE_DETAILS/>
+
+</dataset>

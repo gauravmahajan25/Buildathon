@@ -20,7 +20,7 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 
 /**
- * Class for Resource. Handles all CRUD(Create/Update/Read/Delete) operations for http requests.
+ * Type Resource. Handles all CRUD(Create/Update/Read/Delete) operations for http requests.
  */
 @Path(TypeResource.RESOURCE_IDENTIFIER)
 @Component(value = "typeResource")

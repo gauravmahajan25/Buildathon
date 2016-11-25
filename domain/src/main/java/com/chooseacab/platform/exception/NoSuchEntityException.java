@@ -6,7 +6,7 @@ package com.chooseacab.platform.exception;
 public class NoSuchEntityException extends RuntimeException {
 
     public NoSuchEntityException() {
-
+    	//default constructor
     }
     public NoSuchEntityException(String message) {
         super(message);

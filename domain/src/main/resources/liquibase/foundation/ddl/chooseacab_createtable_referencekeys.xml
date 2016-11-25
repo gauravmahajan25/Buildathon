@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+	<changeSet id="add_fk_fare_operator_id" author="chooseacab">
+		<addForeignKeyConstraint baseColumnNames="cc_operator_id"
+			baseTableName="cc_fare_details" constraintName="fk_fare_operator_id"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_operators" />
+	</changeSet>
+
+	<changeSet id="add_fk_fare_type_id" author="chooseacab">
+		<addForeignKeyConstraint baseColumnNames="cc_type_id"
+			baseTableName="cc_fare_details" constraintName="fk_fare_type_id"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_types" />
+	</changeSet>
+
+	<changeSet id="add_fk_ride_source_loc_id" author="chooseacab">
+		<addForeignKeyConstraint baseColumnNames="cc_source_loc_id"
+			baseTableName="cc_ride_details" constraintName="fk_ride_source_loc_id"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_locations" />
+	</changeSet>
+
+	<changeSet id="add_fk_ride_destination_loc_id" author="chooseacab">
+		<addForeignKeyConstraint baseColumnNames="cc_destination_loc_id"
+			baseTableName="cc_ride_details" constraintName="fk_ride_destination_loc_id"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_locations" />
+	</changeSet>
+
+	<changeSet id="add_fk_ride_fare_id" author="chooseacab">
+		<addForeignKeyConstraint baseColumnNames="cc_fare_id"
+			baseTableName="cc_ride_details" constraintName="fk_ride_fare_id"
+			onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="id"
+			referencedTableName="cc_fare_details" />
+	</changeSet>
+	
+</databaseChangeLog>

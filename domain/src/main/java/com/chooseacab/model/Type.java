@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Entity of User table.
+ * Entity of Type table.
  */
 @Entity
 @Table(name = "CC_TYPES")
