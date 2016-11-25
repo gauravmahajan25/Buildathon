@@ -1,5 +1,6 @@
 package com.chooseacab.repository;
 
+import com.chooseacab.model.Type;
 import com.chooseacab.repository.impl.TypeJpaRepositoryImpl;
 
 import org.hibernate.Criteria;
@@ -21,7 +22,7 @@ import static org.mockito.Mockito.spy;
 /**
  * Test class for Type Repository.
  */
-public interface TypeJpaRepositoryTest {
+public class TypeJpaRepositoryTest {
 
 	TypeJpaRepositoryImpl typeJpaRepository = new TypeJpaRepositoryImpl();
 
