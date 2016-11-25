@@ -1,9 +1,23 @@
 package com.chooseacab.repository;
 
-import com.chooseacab.model.Type;
+import com.chooseacab.repository.impl.TypeJpaRepositoryImpl;
 
+import org.hibernate.Criteria;
+import org.mockito.MockitoAnnotations;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 /**
  * Test class for Type Repository.
  */
