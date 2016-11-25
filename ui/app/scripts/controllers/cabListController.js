@@ -30,11 +30,11 @@
       $scope.triggerSearch = true;
 
       cabService.query($scope.search,
-                     function (resp) {
-                       $scope.cabList = resp;
-                     },
-                     function (error) {
-                     });
+                       function (resp) {
+                         $scope.cabList = resp;
+                       },
+                       function (error) {
+                       });
 
     };
 

@@ -1,9 +1,11 @@
 describe('Controller: CabListController', function () {
-  var mockCabService = {};
-  var ctrl, scope;
+  var mockCabService = new Object();
+  var mockCabTypeService = new Object();
+  var mockCabOperatorService = new Object();
+  var mockLocationService = new Object();
+  var ctrl, scope, timeout;
 
   beforeEach(function () {
-
     module('findACab', function ($provide) {
       $provide.value('cabService', mockCabService);
       $provide.value('cabTypeService', mockCabTypeService);
@@ -12,69 +14,59 @@ describe('Controller: CabListController', function () {
     });
 
     inject(function ($q) {
-        mockCabService.search = function () {
-          var defer = $q.defer();
-          defer.resolve([{
-            "id": 100,
-            "operatorName": "OLA",
-            "typeName": "SEDAN",
-            "fair": 10.0,
-            "discount": null
-          }]);
-          return defer.promise;
-        };
+             mockCabService.query = function (search, successFn, errorFn) {
+               successFn([{
+                 "id": 100,
+                 "operatorName": "OLA",
+                 "typeName": "SEDAN",
+                 "fair": 10.0,
+                 "discount": null
+               }]);
+             };
 
-        mockCabTypeService.search = function () {
-          var defer = $q.defer();
-          defer.resolve([{
-            "id": 101,
-            "name": "HATCHBACK"
-          }, {
-            "id": 102,
-            "name": "MUV"
-          }, {
-            "id": 100,
-            "name": "SEDAN"
-          }]);
-          return defer.promise;
-        };
+             mockCabTypeService.query = function (successFn) {
+               successFn([{
+                 "id": 101,
+                 "name": "HATCHBACK"
+               }, {
+                 "id": 102,
+                 "name": "MUV"
+               }, {
+                 "id": 100,
+                 "name": "SEDAN"
+               }]);
+             };
 
-        mockCabOperatorService.search = function () {
-          var defer = $q.defer();
-          defer.resolve([{
-            "id": 100,
-            "name": "MERU"
-          }, {
-            "id": 102,
-            "name": "OLA"
-          }, {
-            "id": 101,
-            "name": "UBER"
-          }]);
-          return defer.promise;
-        };
+             mockCabOperatorService.query = function (successFn) {
+               successFn([{
+                 "id": 100,
+                 "name": "MERU"
+               }, {
+                 "id": 102,
+                 "name": "OLA"
+               }, {
+                 "id": 101,
+                 "name": "UBER"
+               }]);
+             };
 
-        mockLocationService.search = function () {
-          var defer = $q.defer();
-          defer.resolve([{
-            "id": 100,
-            "name": "HYDERABAD",
-            "zipCode": 500001
-          }, {
-            "id": 101,
-            "name": "BANGLORE",
-            "zipCode": 560001
-          }]);
-          return defer.promise;
-        };
-      }
-
-
+             mockLocationService.query = function (successFn) {
+               successFn([{
+                 "id": 100,
+                 "name": "HYDERABAD",
+                 "zipCode": 500001
+               }, {
+                 "id": 101,
+                 "name": "BANGLORE",
+                 "zipCode": 560001
+               }]);
+             };
+           }
     );
+
   });
 
-
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $timeout) {
     scope = $rootScope.$new();
     ctrl = $controller('CabListController', {
       $scope: scope,
@@ -83,6 +75,7 @@ describe('Controller: CabListController', function () {
       cabOperatorService: mockCabOperatorService,
       locationService: mockLocationService
     });
+    timeout = $timeout;
   }));
 
   it('should search for the cabs with serch criteria', function () {
@@ -92,7 +85,28 @@ describe('Controller: CabListController', function () {
       destinationId: "dest"
     };
 
-    //scope.searchCabs();
-    //expect($scope.cabList.length).toBe(3);
+    searchForm = {}
+    scope.searchCabs(searchForm);
+    timeout(function () {
+      expect(scope.cabList.length).toBe(1);
+    }, 1000)
+  })
+
+  it('should get cab operators from service ', function () {
+    timeout(function () {
+      expect(scope.cabOperators.length).toBe(3);
+    }, 1000)
+  });
+
+  it('should get cab types from service ', function () {
+    timeout(function () {
+      expect(scope.cabTypes.length).toBe(3);
+    }, 1000)
+  });
+
+  it('should get locations from service ', function () {
+    timeout(function () {
+      expect(scope.locations.length).toBe(2);
+    }, 1000)
   });
 });
