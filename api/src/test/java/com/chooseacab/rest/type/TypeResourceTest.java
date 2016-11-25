@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/*
+/**
  * A test class for Type Resource
  */
 public class TypeResourceTest extends AbstractTestNGJerseyDBUnitTest {
@@ -24,7 +24,7 @@ public class TypeResourceTest extends AbstractTestNGJerseyDBUnitTest {
 		return new Class[] { TypeResource.class };
 	}
 
-	/*
+	/**
 	 * Test for End Point Name
 	 */
 	@Test
@@ -33,7 +33,7 @@ public class TypeResourceTest extends AbstractTestNGJerseyDBUnitTest {
 		Assert.assertEquals(endpointName, "/type");
 	}
 
-	/*
+	/**
 	 * Test for End getting all types.
 	 */
 	@Test

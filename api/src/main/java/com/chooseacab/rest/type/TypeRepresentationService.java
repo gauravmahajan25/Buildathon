@@ -7,5 +7,10 @@ import java.util.List;
  */
 public interface TypeRepresentationService {
 
+	/**
+	 * Return all Types.
+	 * 
+	 * @return List of Types.
+	 */
     List<TypeRepresentation> getTypes();
 }

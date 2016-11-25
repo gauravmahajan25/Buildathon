@@ -11,6 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 
+/**
+ * 
+ * Class for Type Representation Service Implementation.
+ *
+ */
 @Service
 @Transactional
 public class TypeRepresentationServiceImpl implements TypeRepresentationService {

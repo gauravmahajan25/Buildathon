@@ -19,7 +19,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.mockito.Mockito.when;
 
-/*
+/**
  * A test class for Type Representation. This class unit tests the name and id for a type.
  */
 public class TypeRepresentationServiceImplTest {
@@ -36,7 +36,7 @@ public class TypeRepresentationServiceImplTest {
 		ReflectionTestUtils.setField(typeRepresentationService, "typeService", typeService);
 	}
 
-	/*
+	/**
 	 * A test to test the type retrieval.
 	 */
 	@Test

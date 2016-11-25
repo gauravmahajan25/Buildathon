@@ -8,13 +8,13 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/*
+/**
  * A test class for Type Representation. This class unit tests the name and id for a type.
  */
 public class TypeRepresentationTest {
 
-	/*
-	 * Method to test typeName.
+	/**
+	 *Test case to test equals typeName.
 	 */
 	@Test
 	  public void testEqualsTypeName(){
@@ -25,8 +25,8 @@ public class TypeRepresentationTest {
 	    Assert.assertEquals("SEDAN", typeName, "Type Name Test passed");
 	  }
 	
-	/*
-	 * Method to test typeId.
+	/**
+	 * Test case to test equals typeId.
 	 */
 	@Test
 	  public void testEqualsTypeId(){
@@ -38,6 +38,9 @@ public class TypeRepresentationTest {
 	    Assert.assertEquals(10001L, typeId, "Type ID Test passed");
 	  }
 	
+	/**
+	 * Test case to test not equals type name.
+	 */
 	@Test
 	  public void testNotEqualsTypeName(){
 	    final TypeRepresentation representation = new TypeRepresentation();
@@ -47,8 +50,8 @@ public class TypeRepresentationTest {
 	    Assert.assertNotEquals("MUV", typeName, "Not Equals Type Name Test passed");
 	  }
 	
-	/*
-	 * Method to test typeId.
+	/**
+	 * Test case to test not equals typeId.
 	 */
 	@Test
 	  public void testNotEqualsTypeId(){
