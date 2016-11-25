@@ -8,12 +8,12 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/*
+/**
  * A test class for Location Representation. This class unit tests the name, zip and id for a location.
  */
 public class LocationRepresentationTest {
 
-	/*
+	/**
 	 * Method to test location name.
 	 */
 	@Test
@@ -25,7 +25,7 @@ public class LocationRepresentationTest {
 	    Assert.assertEquals("Hyderabad", locationName, "Location Name equals Test passed");
 	  }
 	
-	/*
+	/**
 	 * Method to test locationId.
 	 */
 	@Test
@@ -37,7 +37,7 @@ public class LocationRepresentationTest {
 	    Assert.assertEquals(10001L, locationId, "Location ID equals Test passed");
 	  }
 	
-	/*
+	/**
 	 * Method to test location zip code.
 	 */
 	@Test

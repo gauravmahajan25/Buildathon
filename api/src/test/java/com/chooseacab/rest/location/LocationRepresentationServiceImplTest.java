@@ -19,7 +19,7 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.mockito.Mockito.when;
 
-/*
+/**
  * A test class for Location Representation.
  */
 public class LocationRepresentationServiceImplTest {
@@ -36,7 +36,7 @@ public class LocationRepresentationServiceImplTest {
 		ReflectionTestUtils.setField(locationRepresentationService, "locationService", locationService);
 	}
 
-	/*
+	/**
 	 * A test to test the Location retrieval.
 	 */
 	@Test
