@@ -22,19 +22,19 @@
       $scope.locations = data;
     });
 
-    $scope.searchCabs = function (searchForm) {
+    $scope.searchCabs = function (searchForm,search) {
       $scope.cabList = [];
 
       if(!validate(searchForm)) return;
 
       $scope.triggerSearch = true;
 
-      cabService.query($scope.search,
-                     function (resp) {
-                       $scope.cabList = resp;
-                     },
-                     function (error) {
-                     });
+      cabService.query(search,
+                       function (resp) {
+                         $scope.cabList = resp;
+                       },
+                       function (error) {
+                       });
 
     };
 

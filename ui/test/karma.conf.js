@@ -32,12 +32,12 @@ module.exports = function (config) {
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
     exclude: [
+      'node_modules/karma-ng-angular-scenario/lib/angular-scenario.js'
     ],
 
     // web server port
@@ -54,6 +54,7 @@ module.exports = function (config) {
     browsers: [
       'PhantomJS'
     ],
+
 
     // Which plugins to enable
     plugins: [
