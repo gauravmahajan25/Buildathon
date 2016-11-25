@@ -1,10 +1,5 @@
 package com.chooseacab.rest.type;
 
-import com.chooseacab.model.Type;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,53 +8,53 @@ import org.testng.annotations.Test;
  */
 public class TypeRepresentationTest {
 
-	/**
-	 *Test case to test equals typeName.
-	 */
-	@Test
-	  public void testEqualsTypeName(){
-	    final TypeRepresentation representation = new TypeRepresentation();
-	    representation.setName("SEDAN");
+  /**
+   * Test case to test equals typeName.
+   */
+  @Test
+  public void testEqualsTypeName() {
+    final TypeRepresentation representation = new TypeRepresentation();
+    representation.setName("SEDAN");
 
-	    final String typeName = representation.getName();
-	    Assert.assertEquals("SEDAN", typeName, "Type Name Test passed");
-	  }
-	
-	/**
-	 * Test case to test equals typeId.
-	 */
-	@Test
-	  public void testEqualsTypeId(){
-	    final TypeRepresentation representation = new TypeRepresentation();
-	    representation.setId(10001L);
-	    representation.setName("MUV");
+    final String typeName = representation.getName();
+    Assert.assertEquals("SEDAN", typeName, "Type Name Test passed");
+  }
 
-	    final long typeId = representation.getId();
-	    Assert.assertEquals(10001L, typeId, "Type ID Test passed");
-	  }
-	
-	/**
-	 * Test case to test not equals type name.
-	 */
-	@Test
-	  public void testNotEqualsTypeName(){
-	    final TypeRepresentation representation = new TypeRepresentation();
-	    representation.setName("SEDAN");
+  /**
+   * Test case to test equals typeId.
+   */
+  @Test
+  public void testEqualsTypeId() {
+    final TypeRepresentation representation = new TypeRepresentation();
+    representation.setId(10001L);
+    representation.setName("MUV");
 
-	    final String typeName = representation.getName();
-	    Assert.assertNotEquals("MUV", typeName, "Not Equals Type Name Test passed");
-	  }
-	
-	/**
-	 * Test case to test not equals typeId.
-	 */
-	@Test
-	  public void testNotEqualsTypeId(){
-	    final TypeRepresentation representation = new TypeRepresentation();
-	    representation.setId(10001L);
-	    representation.setName("MUV");
+    final long typeId = representation.getId();
+    Assert.assertEquals(10001L, typeId, "Type ID Test passed");
+  }
 
-	    final long typeId = representation.getId();
-	    Assert.assertNotEquals(10003L, typeId, "Not Equals Type ID Test passed");
-	  }
+  /**
+   * Test case to test not equals type name.
+   */
+  @Test
+  public void testNotEqualsTypeName() {
+    final TypeRepresentation representation = new TypeRepresentation();
+    representation.setName("SEDAN");
+
+    final String typeName = representation.getName();
+    Assert.assertNotEquals("MUV", typeName, "Not Equals Type Name Test passed");
+  }
+
+  /**
+   * Test case to test not equals typeId.
+   */
+  @Test
+  public void testNotEqualsTypeId() {
+    final TypeRepresentation representation = new TypeRepresentation();
+    representation.setId(10001L);
+    representation.setName("MUV");
+
+    final long typeId = representation.getId();
+    Assert.assertNotEquals(10003L, typeId, "Not Equals Type ID Test passed");
+  }
 }

@@ -147,7 +147,7 @@
 					<execution>
 						<phase>process-resources</phase>
 						<configuration>
-							<propertyFile>domain/src/main/resources/liquibase/liquibase.properties</propertyFile>
+							<propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
 						</configuration>
 						<goals>
 							<goal>update</goal>
