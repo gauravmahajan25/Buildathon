@@ -3,12 +3,12 @@ package com.chooseacab.rest.ridedetails;
 import org.junit.Assert;
 import org.junit.Test;
 
-/*
+/**
  * Test class for Operator Representation.
  */
 public class OperatorRepresentationTest {
 
-	/*
+	/**
 	 * Test case for Operator Name.
 	 */
 	@Test
@@ -21,7 +21,7 @@ public class OperatorRepresentationTest {
 		Assert.assertEquals("OLA", operatorName);
 	}
 
-	/*
+	/**
 	 * Test case for Operator Id
 	 */
 	@Test

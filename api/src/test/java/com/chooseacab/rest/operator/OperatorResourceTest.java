@@ -11,7 +11,11 @@ import java.io.InputStream;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
+/**
+ * 
+ * Test class for Operator Resource.
+ *
+ */
 public class OperatorResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
 	@Override

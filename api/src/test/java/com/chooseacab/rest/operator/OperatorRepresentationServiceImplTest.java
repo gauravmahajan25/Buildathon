@@ -18,7 +18,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
-/*
+/**
  * Test case for Operator Representation Service Implementations.
  */
 public class OperatorRepresentationServiceImplTest {
