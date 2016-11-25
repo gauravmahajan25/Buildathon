@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.lang.invoke.MethodHandles;
 import java.util.List;
 
+/**
+ * Implemntation of Operator Representation Service.
+ */
 @Service
 @Transactional
 public class OperatorRepresentationServiceImpl implements OperatorRepresentationService {
@@ -24,7 +27,7 @@ public class OperatorRepresentationServiceImpl implements OperatorRepresentation
     public List<OperatorRepresentation> getOperators() {
         LOGGER.debug("Entering OperatorRepresentationServiceImpl.getOperators");
 
-        List<Operator> operators = operatorService.getOperators();
+        final List<Operator> operators = operatorService.getOperators();
 
         LOGGER.debug("Exiting OperatorRepresentationServiceImpl.getOperators");
 

@@ -5,47 +5,54 @@ import com.chooseacab.model.Operator;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
+/**
  * A resource representation class for Operator entity.
  */
 public class OperatorRepresentation {
 
-  public Long id;
+	private Long id;
 
-  public String name;
+	private String name;
 
-  public Long getId() {
-    return id;
-  }
+	public OperatorRepresentation() {
+		// default constructor
+	}
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+	/**
+	 * Constructor to instantiate Oprator Representation with Operator
+	 * parameters.
+	 */
+	public OperatorRepresentation(Operator operator) {
+		setId(operator.getId());
+		setName(operator.getName());
+	}
 
-  public String getName() {
-    return name;
-  }
+	public Long getId() {
+		return id;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-  public OperatorRepresentation(){
+	public String getName() {
+		return name;
+	}
 
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public OperatorRepresentation(Operator operator){
-    setId(operator.getId());
-    setName(operator.getName());
-  }
+	/**
+	 * Returns the operator representations for the operators passed.
+	 */
+	public static List<OperatorRepresentation> toRepresentations(List<Operator> operators) {
+		final List<OperatorRepresentation> representations = new ArrayList<>();
 
-  public static List<OperatorRepresentation> toRepresentations(List<Operator> operators){
-    List<OperatorRepresentation> representations = new ArrayList<>();
-
-    for(Operator operator:operators){
-      OperatorRepresentation representation = new OperatorRepresentation(operator);
-      representations.add(representation);
-    }
-    return representations;
-  }
+		for (final Operator operator : operators) {
+			final OperatorRepresentation representation = new OperatorRepresentation(operator);
+			representations.add(representation);
+		}
+		return representations;
+	}
 }

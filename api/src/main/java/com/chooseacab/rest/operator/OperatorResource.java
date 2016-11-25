@@ -46,7 +46,7 @@ public class OperatorResource {
   public Response getOperators() {
 
     try {
-      List<OperatorRepresentation> representations = operatorRepresentationService.getOperators();
+      final List<OperatorRepresentation> representations = operatorRepresentationService.getOperators();
 
       if (representations.isEmpty()) {
         final SystemMessage message =
