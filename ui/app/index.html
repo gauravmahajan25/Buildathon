@@ -12,11 +12,23 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-   <img class="cab-header" src="images/CabHeader.jpg"/>
+   <img class="cab-header" src="images/ChooseACab.png"/>
+      <ul id="menu">
+        <li><a href="#/"> About</a> |</li>
+        <li><a href="#/"> Help</a> |</li>
+        <li><a href="#/"> FAQ</a></li>
+      </ul>
+    <hr class="cab-header-hr">
 
     <div class="container" ng-controller="CabListController">
       <div ng-view=""></div>
     </div>
+
+    <!--<div id="footer">
+      <div class="container">
+        <p>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2016 Choose.a.cab (Build-a-thon) </p>
+      </div>
+    </div>-->
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
