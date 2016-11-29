@@ -22,10 +22,10 @@ public class LocationRepresentationServiceImpl implements LocationRepresentation
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Autowired
-    protected LocationService locationService;
+    private transient LocationService locationService;
 
     @Override
-    public List<LocationRepresentation> getAllLocations() {
+    public final List<LocationRepresentation> getAllLocations() {
         LOGGER.debug("Entering LocationRepresentationServiceImpl.getAllLocations");
 
         final List<Location> locations = locationService.getAllLocations();
@@ -34,4 +34,6 @@ public class LocationRepresentationServiceImpl implements LocationRepresentation
 
         return LocationRepresentation.toRepresentations(locations);
     }
+
+
 }

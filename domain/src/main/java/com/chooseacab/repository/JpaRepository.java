@@ -9,15 +9,6 @@ public interface JpaRepository<T>
 {
     /**
      * <p>
-     * Finds all entities for the given type T.
-     * </p>
-     *
-     * @return collection of elements of type T
-     */
-    Collection<T> findAll();
-
-    /**
-     * <p>
      * Finds the entity of type T with the given primary key id.
      * </p>
      *

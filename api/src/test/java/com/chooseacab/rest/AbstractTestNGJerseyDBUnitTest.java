@@ -24,11 +24,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 import javax.ws.rs.core.Application;
+import java.io.IOException;
 
 public abstract class AbstractTestNGJerseyDBUnitTest extends JerseyTestNg.ContainerPerClassTest{
 
@@ -125,8 +124,8 @@ public abstract class AbstractTestNGJerseyDBUnitTest extends JerseyTestNg.Contai
     final FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
     builder.setColumnSensing(true);
     final IDataSet dataSet =
-        builder.build(
-            getClass().getClassLoader().getResourceAsStream(this.getDataSetFileName()));
+        builder.build(Thread.currentThread().getContextClassLoader().getResourceAsStream(this.getDataSetFileName()));
+
 
     final ReplacementDataSet replacementDataSet = new ReplacementDataSet(dataSet);
     replacementDataSet.addReplacementObject("[NULL]", null);

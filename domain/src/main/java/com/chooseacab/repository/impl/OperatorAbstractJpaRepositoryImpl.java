@@ -8,14 +8,16 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class OperatorJpaRepositoryImpl extends JpaRepositoryImpl<Operator> implements OperatorJpaRepository {
+public class OperatorAbstractJpaRepositoryImpl extends AbstractJpaRepositoryImpl<Operator> implements OperatorJpaRepository {
 
+    /**
+     *
+     * @return list of operators.
+     */
     @Override
-    public List<Operator> getOperators(){
+    public final List<Operator> getOperators(){
         Criteria criteria = createCriteria();
 
-        List<Operator> operators = criteria.list();
-
-        return operators;
+        return criteria.list();
     }
 }

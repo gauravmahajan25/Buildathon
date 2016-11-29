@@ -16,13 +16,15 @@ public class LocationRepresentation {
 
   private Integer zipCode;
 
+  /**
+   * Default constructor.
+   */
   public LocationRepresentation(){
-	  //default constructor
   }
   
   /**
    * Instates Location Reprentation for location passed.
-   * @param Location for which the representation needs to be generated.
+   * @param location for which the representation needs to be generated.
    * 
    */
   public LocationRepresentation(Location location){
@@ -30,28 +32,52 @@ public class LocationRepresentation {
     setName(location.getName());
     setZipCode(location.getZipCode());
   }
-  
-  public Long getId() {
+
+  /**
+   * Set id.
+   * @return id
+   */
+  public final Long getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  /**
+   * Get id
+   * @param id
+   */
+  public final void setId(Long id) {
     this.id = id;
   }
 
-  public String getName() {
+  /**
+   * Get name
+   * @return name
+   */
+  public final String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  /**
+   * Set name
+   * @param name
+   */
+  public final void setName(String name) {
     this.name = name;
   }
 
-  public Integer getZipCode() {
+  /**
+   * Get zip code
+   * @return
+   */
+  public final Integer getZipCode() {
     return zipCode;
   }
 
-  public void setZipCode(Integer zipCode) {
+  /**
+   * Set zip code
+   * @param zipCode
+   */
+  public final void setZipCode(Integer zipCode) {
     this.zipCode = zipCode;
   }
 

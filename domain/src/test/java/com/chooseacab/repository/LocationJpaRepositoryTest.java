@@ -1,7 +1,7 @@
 package com.chooseacab.repository;
 
 import com.chooseacab.model.Location;
-import com.chooseacab.repository.impl.LocationJpaRepositoryImpl;
+import com.chooseacab.repository.impl.LocationAbstractJpaRepositoryImpl;
 
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.spy;
  */
 public class LocationJpaRepositoryTest {
 
-    LocationJpaRepositoryImpl locationJpaRepository = new LocationJpaRepositoryImpl();
+    LocationAbstractJpaRepositoryImpl locationJpaRepository = new LocationAbstractJpaRepositoryImpl();
 
     @BeforeClass
     protected void setUp() throws Exception {
@@ -36,7 +36,7 @@ public class LocationJpaRepositoryTest {
     @Test
     public void testGetAllLocations() {
         final Criteria criteria = mock(Criteria.class);
-        final LocationJpaRepositoryImpl spy = spy(locationJpaRepository);
+        final LocationAbstractJpaRepositoryImpl spy = spy(locationJpaRepository);
 
         final Location location = new Location();
         location.setName("LOC1");
