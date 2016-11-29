@@ -37,7 +37,7 @@ public class RideDetailsResource {
   private static final Logger LOGGER = LoggerFactory.getLogger(RideDetailsResource.class);
 
   @Autowired
-  protected MessageSource messageSource;
+  private MessageSource messageSource;
 
   @Context
   private UriInfo uriInfo;
