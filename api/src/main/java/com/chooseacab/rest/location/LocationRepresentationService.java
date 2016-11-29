@@ -7,8 +7,8 @@ import java.util.List;
  */
 public interface LocationRepresentationService {
 	/**
-	 * Api to get all locations
-	 * @return List of Locatin Representation.
+	 * Api to get all locations.
+	 * @return List of Location Representations.
 	 */
     List<LocationRepresentation> getAllLocations();
 }

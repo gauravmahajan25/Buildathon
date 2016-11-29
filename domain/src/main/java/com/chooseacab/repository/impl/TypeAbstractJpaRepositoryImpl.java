@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class TypeJpaRepositoryImpl extends JpaRepositoryImpl<Type> implements TypeJpaRepository {
+public class TypeAbstractJpaRepositoryImpl extends AbstractJpaRepositoryImpl<Type> implements TypeJpaRepository {
 
     @Override
     public List<Type> getTypes(){

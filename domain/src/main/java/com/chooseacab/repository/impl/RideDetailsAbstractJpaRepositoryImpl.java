@@ -3,7 +3,6 @@ package com.chooseacab.repository.impl;
 import com.chooseacab.model.RideDetails;
 import com.chooseacab.repository.RideDetailsJpaRepository;
 import com.chooseacab.search.RideDetailsSearch;
-
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -11,17 +10,21 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class RideDetailsJpaRepositoryImpl extends JpaRepositoryImpl<RideDetails>
+public class RideDetailsAbstractJpaRepositoryImpl extends AbstractJpaRepositoryImpl<RideDetails>
     implements RideDetailsJpaRepository {
 
+    /**
+     * @param rideDetailsSearch
+     * @return list of ride details.
+     */
     @Override
-    public List<RideDetails> searchRideDetails(RideDetailsSearch rideDetailsSearch){
+    public final List<RideDetails> searchRideDetails(final RideDetailsSearch rideDetailsSearch){
         Criteria criteria = createSearchCriteria(rideDetailsSearch);
 
         return criteria.list();
     }
 
-    private Criteria createSearchCriteria(RideDetailsSearch rideDetailsSearch){
+    private Criteria createSearchCriteria(final RideDetailsSearch rideDetailsSearch){
         final Criteria criteria = createCriteria();
 
         if (rideDetailsSearch.getSourceId() != null ) {
@@ -53,27 +56,45 @@ public class RideDetailsJpaRepositoryImpl extends JpaRepositoryImpl<RideDetails>
         return criteria;
     }
 
-    private void searchSourceId(RideDetailsSearch rideDetailsSearch,
+    /**
+     * Search by source id.
+     * @param rideDetailsSearch
+     * @param criteria
+     */
+    private void searchSourceId(final RideDetailsSearch rideDetailsSearch,
                                             Criteria criteria) {
         if (rideDetailsSearch.getSourceId() != null) {
             criteria.add(Restrictions.eq("sourceLocation.id", rideDetailsSearch.getSourceId()));
         }
     }
 
-    private void searchDestinationId(RideDetailsSearch rideDetailsSearch,
-                                Criteria criteria) {
+    /**
+     * Search by destination id.
+     * @param rideDetailsSearch
+     * @param criteria
+     */
+    private void searchDestinationId(final RideDetailsSearch rideDetailsSearch, Criteria criteria) {
         if (rideDetailsSearch.getDestinationId() != null) {
             criteria.add(Restrictions.eq("destinationLocation.id", rideDetailsSearch.getDestinationId()));
         }
     }
 
-    private void searchOperatorIds(RideDetailsSearch rideDetailsSearch,
-                                     Criteria criteria) {
+    /**
+     * Search by operator ids.
+     * @param rideDetailsSearch
+     * @param criteria
+     */
+    private void searchOperatorIds(final RideDetailsSearch rideDetailsSearch, Criteria criteria) {
         if (!rideDetailsSearch.getOperatorIds().isEmpty()) {
             criteria.add(Restrictions.in("fareDetails.operator.id", rideDetailsSearch.getOperatorIds()));
         }
     }
 
+    /**
+     * Search by type ids.
+     * @param rideDetailsSearch
+     * @param criteria
+     */
     private void searchTypeIds(RideDetailsSearch rideDetailsSearch,
                                  Criteria criteria) {
         if (!rideDetailsSearch.getTypeIds().isEmpty()) {
