@@ -19,52 +19,90 @@ import javax.persistence.Table;
 @Table(name = "CC_LOCATIONS")
 public class Location implements Serializable {
 
+	/**
+     * Propery for ID Column for CC_LOCATIONS.
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Propery for NAME Column for CC_LOCATIONS.
+     */
     @Column(name = "NAME")
     private String name;
 
+    /**
+     * Propery for ZIP Column for CC_LOCATIONS.
+     */
     @Column(name = "ZIP")
     private int zipCode;
 
-    public Long getId() {
+    /**
+     * Method to get Id for CC_LOCATIONS record.
+     * @return Long - Id for CC_LOCATIONS record.
+     */
+    public final Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    /**
+     * Method to set Id for CC_LOCATIONS record.
+     * @param id - Id for CC_LOCATIONS record.
+     */
+    public final void setId(final Long id) {
         this.id = id;
     }
 
-    public String getName() {
+    /**
+     * Method to get Name for CC_LOCATIONS record.
+     * @return String - Name for CC_LOCATIONS record.
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     * Method to set name for CC_LOCATIONS record.
+     * @param name - name for CC_LOCATIONS record.
+     */
+    public final void setName(final String name) {
         this.name = name;
     }
 
-    public int getZipCode() {
+    /**
+     * Method to get zipcode for CC_LOCATIONS record.
+     * @return int - zipcode for CC_LOCATIONS record.
+     */
+    public final int getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(int zipCode) {
+    /**
+     * Method to set zipCode for CC_LOCATIONS record.
+     * @param name - zipCode for CC_LOCATIONS record.
+     */
+    public final void setZipCode(final int zipCode) {
         this.zipCode = zipCode;
     }
 
+    /**
+     * Overriding the equals method to compare two records for Locations.
+     * @param object - Object to compare.
+     * @return boolean - True/False based on Location instances are equals or not.
+     */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (!(o instanceof Location)) {
+        if (!(object instanceof Location)) {
             return false;
         }
 
-        final Location other = (Location) o;
+        final Location other = (Location) object;
 
         return new EqualsBuilder()
                 .append(this.getName(), other.getName())
@@ -72,6 +110,10 @@ public class Location implements Serializable {
                 .isEquals();
     }
 
+    /**
+     * Overriding the hshcode method to return random hashcode value for Type object.
+     * @return int - hshcode value.
+     */
     @Override
     public int hashCode() {
         return new HashCodeBuilder()

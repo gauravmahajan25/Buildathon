@@ -16,7 +16,11 @@ public class FareDetails implements Serializable {
 	 * Serial version id
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
+	/**
+     * Propery for ID Column for CC_FARE_DETAILS.
+     */
+    
 	@Id
 	@Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,80 +53,80 @@ public class FareDetails implements Serializable {
     private Type type;
 
     /**
-     * Method to get Id for CC_FARE_DETAILS record
-     * @return Long - Id for CC_FARE_DETAILS record
+     * Method to get Id for CC_FARE_DETAILS record.
+     * @return Long - Id for CC_FARE_DETAILS record.
      */
     public final Long getId() {
         return id;
     }
 
     /**
-     * Method to set Id for CC_FARE_DETAILS record
-     * @param id - Id for CC_FARE_DETAILS record
+     * Method to set Id for CC_FARE_DETAILS record.
+     * @param id - Id for CC_FARE_DETAILS record.
      */
     public final void setId(final Long id) {
         this.id = id;
     }
 
     /**
-     * Method to get fare for CC_FARE_DETAILS record
-     * @return Double - fare for CC_FARE_DETAILS record
+     * Method to get fare for CC_FARE_DETAILS record.
+     * @return Double - fare for CC_FARE_DETAILS record.
      */
     public final Double getFare() {
         return fare;
     }
 
     /**
-     * Method to set fare for CC_FARE_DETAILS record
-     * @param fare - fare for CC_FARE_DETAILS record
+     * Method to set fare for CC_FARE_DETAILS record.
+     * @param fare - fare for CC_FARE_DETAILS record.
      */
     public final void setFare(final Double fare) {
         this.fare = fare;
     }
 
     /**
-     * Method to get discount for CC_FARE_DETAILS record
-     * @return Integer - discount for CC_FARE_DETAILS record
+     * Method to get discount for CC_FARE_DETAILS record.
+     * @return Integer - discount for CC_FARE_DETAILS record.
      */
     public final Integer getDiscount() {
         return discount;
     }
 
     /**
-     * Method to set discount for CC_FARE_DETAILS record
-     * @param discount - discount for CC_FARE_DETAILS record
+     * Method to set discount for CC_FARE_DETAILS record.
+     * @param discount - discount for CC_FARE_DETAILS record.
      */
     public final void setDiscount(final Integer discount) {
         this.discount = discount;
     }
 
     /**
-     * Method to get operator for CC_FARE_DETAILS record
-     * @return Operator - operator value for CC_FARE_DETAILS record
+     * Method to get operator for CC_FARE_DETAILS record.
+     * @return Operator - operator value for CC_FARE_DETAILS record.
      */
     public final Operator getOperator() {
         return operator;
     }
 
     /**
-     * Method to set operator for CC_FARE_DETAILS record
-     * @param operator - operator for CC_FARE_DETAILS record
+     * Method to set operator for CC_FARE_DETAILS record.
+     * @param operator - operator for CC_FARE_DETAILS record.
      */
     public final void setOperator(final Operator operator) {
         this.operator = operator;
     }
 
     /**
-     * Method to get type value for CC_FARE_DETAILS record
-     * @return Type - type value for CC_FARE_DETAILS record
+     * Method to get type value for CC_FARE_DETAILS record.
+     * @return Type - type value for CC_FARE_DETAILS record.
      */
     public final Type getType() {
         return type;
     }
 
     /**
-     * Method to set type for CC_FARE_DETAILS record
-     * @param type - type for CC_FARE_DETAILS record
+     * Method to set type for CC_FARE_DETAILS record.
+     * @param type - type for CC_FARE_DETAILS record.
      */
     public final void setType(final Type type) {
         this.type = type;
