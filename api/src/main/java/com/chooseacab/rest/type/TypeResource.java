@@ -33,13 +33,13 @@ public class TypeResource {
   private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   @Autowired
-  private static MessageSource messageSource;
+  private MessageSource messageSource;
 
   @Context
   private UriInfo uriInfo;
 
   @Autowired
-  private static TypeRepresentationService typeRepresentationService;
+  private TypeRepresentationService typeRepresentationService;
 
   /**
    * Get Types.

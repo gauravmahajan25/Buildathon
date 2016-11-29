@@ -33,7 +33,7 @@ public class OperatorResource {
   private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   @Autowired
-  protected MessageSource messageSource;
+  private MessageSource messageSource;
 
   @Context
   private UriInfo uriInfo;
