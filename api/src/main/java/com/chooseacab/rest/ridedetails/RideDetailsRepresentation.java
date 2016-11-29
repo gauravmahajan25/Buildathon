@@ -19,14 +19,17 @@ public class RideDetailsRepresentation {
   private Double fare;
 
   private Integer discount;
-
+  
+  /**
+   * default constructor
+   */
   public RideDetailsRepresentation(){
 	  //default constructor.
   }
 
   /**
    * Instantiates the RideDetails Representation based on RideDetails passed.
-   * 
+   * @param rideDetails rider details object
    */
   public RideDetailsRepresentation(final RideDetails rideDetails){
     setId(rideDetails.getId());
@@ -35,51 +38,81 @@ public class RideDetailsRepresentation {
     setFare(rideDetails.getFareDetails().getFare());
     setDiscount(rideDetails.getFareDetails().getDiscount());
   }
-
+  /**
+   * get the rider details id
+   * @return rider details id
+   */
   public Long getId() {
     return id;
   }
-
+  /**
+   * set the rider details id
+   * @param id rider details id
+   */
   public void setId(Long id) {
     this.id = id;
   }
-
+  /**
+   * get the operator name
+   * @return operator name
+   */
   public String getOperatorName() {
     return operatorName;
   }
-
+  /**
+   * set the operator name
+   * @param operatorName 
+   */
   public void setOperatorName(String operatorName) {
     this.operatorName = operatorName;
   }
-
+  /**
+   * get type name
+   * @return type name
+   */
   public String getTypeName() {
     return typeName;
   }
-
+  /**
+   * set the type name
+   * @param typeName
+   */
   public void setTypeName(String typeName) {
     this.typeName = typeName;
   }
-
+  /**
+   * get the fare
+   * @return fare
+   */
   public Double getFare() {
     return fare;
   }
-
+  /**
+   * set the fare
+   * @param fare
+   */
   public void setFare(Double fare) {
     this.fare = fare;
   }
-
+  /**
+   * get the discount
+   * @return discount
+   */
   public Integer getDiscount() {
     return discount;
   }
-
+  /**
+   * set the doscount
+   * @param discount
+   */
   public void setDiscount(Integer discount) {
     this.discount = discount;
   }
 
   /**
    * Get the Ride Details Representation based on RideDetails passed.
-   * @param List - rideDetails
-   * @return List - List of Ride Details representation.
+   * @param rideDetails - rideDetails
+   * @return List of Ride Details representation.
    * 
    */
   public static List<RideDetailsRepresentation> toRepresentations(final List<RideDetails> rideDetails){

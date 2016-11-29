@@ -11,9 +11,13 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "CC_FARE_DETAILS")
-public class FareDetails implements Serializable {
+public class FareDetails implements Serializable {	
+    /**
+	 * Serial version id
+	 */
+	private static final long serialVersionUID = 1L;
 
-    @Id
+	@Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
