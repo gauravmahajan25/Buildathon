@@ -10,7 +10,7 @@ public class NoSuchEntityExceptionTest {
   /**
    * Test case for with message only.
    */
-  @Test
+  @Test(expectedExceptions = NoSuchEntityException.class)
   public final void testWithMessageOnly() {
     try {
       throw new NoSuchEntityException("test message");

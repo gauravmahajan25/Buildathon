@@ -10,14 +10,12 @@ import java.util.List;
  */
 public class TypeRepresentation {
 
-  public Long id;
+  private Long id;
 
-  public String name;
-
-  private Integer zipCode;
+  private String name;
 
   /**
-   * Default Constructor
+   * Default Constructor.
    */
   public TypeRepresentation() {
     //default constructor.
@@ -29,7 +27,7 @@ public class TypeRepresentation {
    * @param type - Type for which the representation needs to be generated.
    */
 
-  public TypeRepresentation(Type type) {
+  public TypeRepresentation(final Type type) {
     setId(type.getId());
     setName(type.getName());
   }
@@ -40,7 +38,7 @@ public class TypeRepresentation {
    * @param types - Type List
    * @return - Type Representation list.
    */
-  public static List<TypeRepresentation> toRepresentations(List<Type> types) {
+  public static List<TypeRepresentation> toRepresentations(final List<Type> types) {
     final List<TypeRepresentation> representations = new ArrayList<>();
 
     for (Type type : types) {
@@ -50,18 +48,34 @@ public class TypeRepresentation {
     return representations;
   }
 
+  /**
+   * Get id.
+   * @return id
+   */
   public Long getId() {
     return id;
   }
 
+  /**
+   * Set id.
+   * @param id
+   */
   public void setId(Long id) {
     this.id = id;
   }
 
+  /**
+   * Get name.
+   * @return
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Set name.
+   * @param name
+   */
   public void setName(String name) {
     this.name = name;
   }

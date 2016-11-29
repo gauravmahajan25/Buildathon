@@ -28,19 +28,23 @@ public class TypeResource {
 
   private static final String RESOURCE_NAME = "type";
 
-  public static final String RESOURCE_IDENTIFIER = "" + "/" + RESOURCE_NAME;
+  public static final String RESOURCE_IDENTIFIER = "/" + RESOURCE_NAME;
 
   private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
   @Autowired
-  protected MessageSource messageSource;
+  private static MessageSource messageSource;
 
   @Context
   private UriInfo uriInfo;
 
   @Autowired
-  private TypeRepresentationService typeRepresentationService;
+  private static TypeRepresentationService typeRepresentationService;
 
+  /**
+   * Get Types.
+   * @return response response.
+   */
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Response getTypes() {

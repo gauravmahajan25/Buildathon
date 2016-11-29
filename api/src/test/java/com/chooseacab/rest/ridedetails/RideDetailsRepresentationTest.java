@@ -15,7 +15,7 @@ public class RideDetailsRepresentationTest {
 	 */
 
 	@Test
-	public void testOperatorName() {
+	public final void testOperatorName() {
 		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
 		representation.setOperatorName("OLA");
 
@@ -29,7 +29,7 @@ public class RideDetailsRepresentationTest {
 	 * 
 	 */
 	@Test
-	public void testTypeName() {
+	public final void testTypeName() {
 		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
 		representation.setTypeName("SUV");
 
@@ -43,7 +43,7 @@ public class RideDetailsRepresentationTest {
 	 * 
 	 */
 	@Test
-	public void testFare() {
+	public final void testFare() {
 		double fare = 2;
 		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
 		representation.setFare(fare);
@@ -58,7 +58,7 @@ public class RideDetailsRepresentationTest {
 	 * 
 	 */
 	@Test
-	public void testDiscount() {
+	public final void testDiscount() {
 		final RideDetailsRepresentation representation = new RideDetailsRepresentation();
 		representation.setDiscount(2);
 
