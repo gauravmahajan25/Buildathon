@@ -2,6 +2,11 @@ package com.chooseacab.search;
 
 import java.util.Set;
 
+/**
+ * Class for retrieving the dependent Ids needed to generate Ride Details Report.
+ * 
+ */
+
 public class RideDetailsSearch {
 
   private final Long sourceId;
@@ -9,6 +14,14 @@ public class RideDetailsSearch {
   private final Set<Long> operatorIds;
   private final Set<Long> typeIds;
 
+  /**
+   * Constructor to initialize the depended ids.
+   * 
+   * @param sourceId - Source Location Id
+   * @param destinationId - Destination Location Id 
+   * @param operatorIds - Set of Operator Ids
+   * @param typeIds - Set of Type Ids
+   */
   public RideDetailsSearch(final Long sourceId,
                            final Long destinationId,
                            final Set<Long> operatorIds,
@@ -19,19 +32,35 @@ public class RideDetailsSearch {
     this.typeIds = typeIds;
   }
 
-  public Long getSourceId() {
+  /**
+   * Method to retrieve Source Id.
+   * 
+   */
+  public final Long getSourceId() {
     return sourceId;
   }
 
-  public Long getDestinationId() {
+  /**
+   * Method to retrieve Destination Id.
+   * 
+   */
+  public final Long getDestinationId() {
     return destinationId;
   }
 
-  public Set<Long> getOperatorIds() {
+  /**
+   * Method to retrieve Set of Operator Ids.
+   * 
+   */
+  public final Set<Long> getOperatorIds() {
     return operatorIds;
   }
 
-  public Set<Long> getTypeIds() {
+  /**
+   * Method to retrieve Set of Type Ids.
+   * 
+   */
+  public final Set<Long> getTypeIds() {
     return typeIds;
   }
 }
