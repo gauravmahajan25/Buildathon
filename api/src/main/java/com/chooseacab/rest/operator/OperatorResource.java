@@ -40,7 +40,11 @@ public class OperatorResource {
 
   @Autowired
   private OperatorRepresentationService operatorRepresentationService;
-
+  
+  /**
+   * get the operators
+   * @return response object
+   */
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Response getOperators() {

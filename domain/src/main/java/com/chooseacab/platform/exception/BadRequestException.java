@@ -10,12 +10,20 @@ package com.chooseacab.platform.exception;
  * @see SystemMessageException
  */
 public class BadRequestException extends SystemMessageException {
-
-  public BadRequestException(SystemMessage systemMessage) {
+  
+  /**
+   * argument constructor with systemMessage
+   * @param systemMessage
+   */
+  public BadRequestException(final SystemMessage systemMessage) {
     super(systemMessage);
   }
-
-  public BadRequestException(Throwable cause, SystemMessage systemMessage) {
+  /**
+   * argument constructor with cause and systemMessage
+   * @param cause
+   * @param systemMessage
+   */
+  public BadRequestException(final Throwable cause, final SystemMessage systemMessage) {
     super(cause, systemMessage);
   }
 }

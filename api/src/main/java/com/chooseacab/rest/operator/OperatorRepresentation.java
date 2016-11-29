@@ -13,40 +13,57 @@ public class OperatorRepresentation {
 	private Long id;
 
 	private String name;
-
+	
+	/**
+	 * default constructor
+	 */
 	public OperatorRepresentation() {
 		// default constructor
 	}
 
 	/**
-	 * Constructor to instantiate Oprator Representation with Operator
-	 * parameters.
+	 * Constructor to instantiate Oprator Representation with Operator parameters
+	 * @param operator operator instance
 	 */
-	public OperatorRepresentation(Operator operator) {
+	public OperatorRepresentation(final Operator operator) {
 		setId(operator.getId());
 		setName(operator.getName());
 	}
-
+	/**
+	 * get the id
+	 * @return id
+	 */
 	public Long getId() {
 		return id;
 	}
-
-	public void setId(Long id) {
+	/**
+	 * set the id
+	 * @param id
+	 */
+	public void setId(final Long id) {
 		this.id = id;
 	}
-
+	/**
+	 * get the name
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String name) {
+	/**
+	 * set the name
+	 * @param name
+	 */
+	public void setName(final String name) {
 		this.name = name;
 	}
 
 	/**
 	 * Returns the operator representations for the operators passed.
+	 * @param operators operato instance
+	 * @return operator list
 	 */
-	public static List<OperatorRepresentation> toRepresentations(List<Operator> operators) {
+	public static List<OperatorRepresentation> toRepresentations(final List<Operator> operators) {
 		final List<OperatorRepresentation> representations = new ArrayList<>();
 
 		for (final Operator operator : operators) {

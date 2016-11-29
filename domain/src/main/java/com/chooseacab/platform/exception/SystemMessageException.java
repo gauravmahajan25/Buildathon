@@ -12,17 +12,28 @@ package com.chooseacab.platform.exception;
 public class SystemMessageException extends RuntimeException {
   private final SystemMessage systemMessage;
 
-  public SystemMessageException(SystemMessage systemMessage) {
+  /**
+   * argument constructor with systemMessage
+   * @param systemMessage
+   */
+  public SystemMessageException(final SystemMessage systemMessage) {
     super(systemMessage.getMessage());
     this.systemMessage = systemMessage;
   }
-
-  public SystemMessageException(Throwable cause, SystemMessage systemMessage) {
+  /**
+   * argument constructor with cause and systemMessage
+   * @param cause
+   * @param systemMessage
+   */
+  public SystemMessageException(final Throwable cause, final SystemMessage systemMessage) {
     super(systemMessage.getMessage());
     this.systemMessage = systemMessage;
     this.initCause(cause);
   }
-
+  /**
+   * get the system message
+   * @return system message
+   */
   public SystemMessage getSystemMessage() {
     return systemMessage;
   }
