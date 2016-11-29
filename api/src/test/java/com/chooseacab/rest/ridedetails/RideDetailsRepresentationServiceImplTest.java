@@ -32,7 +32,9 @@ public class RideDetailsRepresentationServiceImplTest {
   private RideDetailsService rideDetailsService;
 
   private RideDetailsRepresentationService rideDetailsRepresentationService;
-
+  /**
+   * before test initialization
+   */
   @BeforeClass
   public void beforeTest() {
     MockitoAnnotations.initMocks(this);
@@ -42,6 +44,9 @@ public class RideDetailsRepresentationServiceImplTest {
         .setField(rideDetailsRepresentationService, "rideDetailsService", rideDetailsService);
   }
 
+  /**
+   * test for search details.
+   */
   @Test
   public void searchTest() {
 

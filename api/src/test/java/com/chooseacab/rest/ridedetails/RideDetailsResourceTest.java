@@ -39,9 +39,9 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
     }
 
     /**
-	 * Test case to test search api.
-	 * 
-	 */
+     * Test case to test search api.
+     * @throws Exception unknown exception
+     */
     @Test
     public void testSearch() throws Exception {
         final Response response  = target(RideDetailsResource.RESOURCE_IDENTIFIER)
@@ -62,7 +62,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
 	 * Test case to test search by source id.
-	 * 
+	 * @throws Exception unknown exception
 	 */
     @Test
     public void testSearchBySourceId() throws Exception {
@@ -85,7 +85,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
    	 * Negative Test case to test search by source id not found.
-   	 * 
+   	 * @throws Exception unknown exception
    	 */
     @Test
     public void testSearchBySourceIdNotFound() throws Exception {
@@ -98,7 +98,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
    	 * Test case to test search by destination id.
-   	 * 
+   	 * @throws Exception unknown exception
    	 */
     @Test
     public void testSearchByDestinationId() throws Exception {
@@ -121,7 +121,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
    	 * Test case to test search by destination id not found.
-   	 * 
+   	 * @throws Exception unknown exception
    	 */
     @Test
     public void testSearchByDestinationIdNotFound() throws Exception {
@@ -134,7 +134,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
    	 * Test case to test search by operator id.
-   	 * 
+   	 * @throws Exception unknown exception
    	 */
     @Test
     public void testSearchByOperatorId() throws Exception {
@@ -157,7 +157,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
    	 * Negative Test case to test search by operator id not found.
-   	 * 
+   	 * @throws Exception unknown exception
    	 */
     @Test
     public void testSearchByOperatorIdNotFound() throws Exception {
@@ -170,7 +170,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
    	 * Test case to test search by type id.
-   	 * 
+   	 * @throws Exception unknown exception
    	 */
     @Test
     public void testSearchByTypeId() throws Exception {
@@ -193,7 +193,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
   	 * Test case to test search by type id not found.
-  	 * 
+  	 * @throws Exception unknown exception
   	 */
     @Test
     public void testSearchByTypeIdNotFound() throws Exception {
@@ -206,7 +206,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
   	 * Test case to test search by dependent parameter ids.
-  	 * 
+  	 * @throws Exception unknown exception
   	 */
     @Test
     public void testSearchByDependentIds() throws Exception {
@@ -232,7 +232,7 @@ public class RideDetailsResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
     /**
   	 * Test case to test search by dependent id not found.
-  	 * 
+  	 * @throws Exception unknown exception
   	 */
     @Test
     public void testSearchByDependentIdsNotFound() throws Exception {
