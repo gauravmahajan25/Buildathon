@@ -103,7 +103,7 @@ public abstract class AbstractJpaRepositoryImpl<T> implements JpaRepository<T> {
 	 * Create Criteria.
 	 * @return criteria Criteria
      */
-	public final Criteria createCriteria() {
+	public  Criteria createCriteria() {
 		return ((Session) getEntityManager().getDelegate()).createCriteria(elementType);
 	}
 
