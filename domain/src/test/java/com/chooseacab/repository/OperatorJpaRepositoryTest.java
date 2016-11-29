@@ -1,7 +1,7 @@
 package com.chooseacab.repository;
 
 import com.chooseacab.model.Operator;
-import com.chooseacab.repository.impl.OperatorJpaRepositoryImpl;
+import com.chooseacab.repository.impl.OperatorAbstractJpaRepositoryImpl;
 
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.spy;
  */
 public class OperatorJpaRepositoryTest {
 
-	final OperatorJpaRepositoryImpl operatorJpaRepository = new OperatorJpaRepositoryImpl();
+	final OperatorAbstractJpaRepositoryImpl operatorJpaRepository = new OperatorAbstractJpaRepositoryImpl();
 
 	@BeforeClass
 	protected void setUp() throws Exception {
@@ -36,7 +36,7 @@ public class OperatorJpaRepositoryTest {
 	@Test
 	public void testGetOperators() {
 		final Criteria criteria = mock(Criteria.class);
-		final OperatorJpaRepositoryImpl spy = spy(operatorJpaRepository);
+		final OperatorAbstractJpaRepositoryImpl spy = spy(operatorJpaRepository);
 
 		final Operator operator = new Operator();
 		operator.setName("OP1");

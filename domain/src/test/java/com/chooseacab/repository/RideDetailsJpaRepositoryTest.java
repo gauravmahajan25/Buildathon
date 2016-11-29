@@ -5,7 +5,7 @@ import com.chooseacab.model.Location;
 import com.chooseacab.model.Operator;
 import com.chooseacab.model.RideDetails;
 import com.chooseacab.model.Type;
-import com.chooseacab.repository.impl.RideDetailsJpaRepositoryImpl;
+import com.chooseacab.repository.impl.RideDetailsAbstractJpaRepositoryImpl;
 import com.chooseacab.search.RideDetailsSearch;
 
 import org.hibernate.Criteria;
@@ -27,7 +27,7 @@ import static org.mockito.Mockito.spy;
 
 public class RideDetailsJpaRepositoryTest {
 
-    RideDetailsJpaRepositoryImpl rideDetailsJpaRepository = new RideDetailsJpaRepositoryImpl();
+    RideDetailsAbstractJpaRepositoryImpl rideDetailsJpaRepository = new RideDetailsAbstractJpaRepositoryImpl();
 
     @BeforeClass
     protected void setUp() throws Exception {
@@ -37,7 +37,7 @@ public class RideDetailsJpaRepositoryTest {
     @Test
     public void testSearchRideDetails() {
         Criteria criteria = mock(Criteria.class);
-        RideDetailsJpaRepositoryImpl spy = spy(rideDetailsJpaRepository);
+        RideDetailsAbstractJpaRepositoryImpl spy = spy(rideDetailsJpaRepository);
 
         final Location sourceLocation = new Location();
         sourceLocation.setName("SRC_LOC1");

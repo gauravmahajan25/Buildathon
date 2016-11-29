@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 
 <dataset>
-    <CC_LOCATIONS ID="1001" NAME="Hyderabad" ZIP_CODE="500074" />
-    <CC_LOCATIONS ID="1002" NAME="Vijayawada" ZIP_CODE="521843" />
+    <CC_LOCATIONS ID="1001" NAME="Hyderabad" CODE="500074" />
+    <CC_LOCATIONS ID="1002" NAME="Vijayawada" CODE="521843" />
 
     <CC_LOCATIONS/>
 </dataset>

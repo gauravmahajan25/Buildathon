@@ -1,7 +1,7 @@
 package com.chooseacab.repository;
 
 import com.chooseacab.model.Type;
-import com.chooseacab.repository.impl.TypeJpaRepositoryImpl;
+import com.chooseacab.repository.impl.TypeAbstractJpaRepositoryImpl;
 
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.spy;
  */
 public class TypeJpaRepositoryTest {
 
-  TypeJpaRepositoryImpl typeJpaRepository = new TypeJpaRepositoryImpl();
+  TypeAbstractJpaRepositoryImpl typeJpaRepository = new TypeAbstractJpaRepositoryImpl();
 
   @BeforeClass
   protected void setUp() throws Exception {
@@ -33,7 +33,7 @@ public class TypeJpaRepositoryTest {
   @Test
   public void testGetTypes() {
     final Criteria criteria = mock(Criteria.class);
-    TypeJpaRepositoryImpl spy = spy(typeJpaRepository);
+    TypeAbstractJpaRepositoryImpl spy = spy(typeJpaRepository);
 
     final Type ola = new Type();
     ola.setName("OLA");
