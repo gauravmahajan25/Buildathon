@@ -18,7 +18,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 
-/*
+/**
  * Test class for Operator Repository.
  */
 public class OperatorJpaRepositoryTest {
@@ -30,7 +30,7 @@ public class OperatorJpaRepositoryTest {
 		MockitoAnnotations.initMocks(this);
 	}
 
-	/*
+	/**
 	 * Test case for get Operators.
 	 */
 	@Test

@@ -18,7 +18,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 
-/*
+/**
  * Test Class for Location Repository.
  */
 public class LocationJpaRepositoryTest {
@@ -30,7 +30,7 @@ public class LocationJpaRepositoryTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    /*
+    /**
      * Test case to test get all Location methods.
      */
     @Test

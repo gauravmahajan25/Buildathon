@@ -14,7 +14,7 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/*
+/**
  * Test Class for Location Service.
  */
 @Test
@@ -27,7 +27,7 @@ public class LocationServiceTest {
     locationJpaRepository = mock(LocationJpaRepository.class);
   }
 
-  /*
+  /**
    * Test case for get all locations service method.
    */
   @Test
