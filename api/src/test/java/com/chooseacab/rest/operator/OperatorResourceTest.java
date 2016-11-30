@@ -17,8 +17,8 @@ public class OperatorResourceTest extends AbstractTestNGJerseyDBUnitTest {
    * @return string dateset file.
    */
   @Override
-  public final String getDataSetFileName() {
-    return "dataset/OperatorResourceTest_DBUnit.xml";
+  public String getDataSetFileName() {
+    return "dataset/OperatorsResourceTest_DBUnit.xml";
   }
 
   /**
@@ -26,7 +26,7 @@ public class OperatorResourceTest extends AbstractTestNGJerseyDBUnitTest {
    * @return object
    */
   @Override
-  protected final Class[] resourcesToRegister() {
+  protected Class[] resourcesToRegister() {
     return new Class[]{OperatorResource.class};
   }
 
@@ -34,7 +34,7 @@ public class OperatorResourceTest extends AbstractTestNGJerseyDBUnitTest {
    * Test endpoint name
    */
   @Test
-  public final void testEndpointName() {
+  public void testEndpointName() {
     final String endpointName = OperatorResource.RESOURCE_IDENTIFIER;
     Assert.assertEquals(endpointName, "/operator");
   }
@@ -44,7 +44,7 @@ public class OperatorResourceTest extends AbstractTestNGJerseyDBUnitTest {
    * @throws Exception
    */
   @Test
-  public final void testGetOperators() throws Exception {
+  public void testGetOperators() throws Exception {
     final Response response = target(OperatorResource.RESOURCE_IDENTIFIER).request()
         .accept(MediaType.APPLICATION_JSON).get();
 

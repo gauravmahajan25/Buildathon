@@ -124,8 +124,8 @@ public abstract class AbstractTestNGJerseyDBUnitTest extends JerseyTestNg.Contai
     final FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
     builder.setColumnSensing(true);
     final IDataSet dataSet =
-        builder.build(Thread.currentThread().getContextClassLoader().getResourceAsStream(this.getDataSetFileName()));
-
+        builder.build(
+            getClass().getClassLoader().getResourceAsStream(this.getDataSetFileName()));
 
     final ReplacementDataSet replacementDataSet = new ReplacementDataSet(dataSet);
     replacementDataSet.addReplacementObject("[NULL]", null);
