@@ -1,7 +1,6 @@
 package com.chooseacab.rest.operator;
 
 import com.chooseacab.rest.AbstractTestNGJerseyDBUnitTest;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,24 +12,39 @@ import javax.ws.rs.core.Response;
  */
 public class OperatorResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
+  /**
+   *
+   * @return string dateset file.
+   */
   @Override
-  public String getDataSetFileName() {
-    return "dataset/operatorResourceTest_DBUnit.xml";
+  public final String getDataSetFileName() {
+    return "dataset/OperatorResourceTest_DBUnit.xml";
   }
 
+  /**
+   *
+   * @return object
+   */
   @Override
-  protected Class[] resourcesToRegister() {
+  protected final Class[] resourcesToRegister() {
     return new Class[]{OperatorResource.class};
   }
 
+  /**
+   * Test endpoint name
+   */
   @Test
-  public void testEndpointName() {
+  public final void testEndpointName() {
     final String endpointName = OperatorResource.RESOURCE_IDENTIFIER;
     Assert.assertEquals(endpointName, "/operator");
   }
 
+  /**
+   * Test get operators.
+   * @throws Exception
+   */
   @Test
-  public void testGetOperators() throws Exception {
+  public final void testGetOperators() throws Exception {
     final Response response = target(OperatorResource.RESOURCE_IDENTIFIER).request()
         .accept(MediaType.APPLICATION_JSON).get();
 

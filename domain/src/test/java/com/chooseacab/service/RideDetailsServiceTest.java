@@ -1,38 +1,35 @@
 package com.chooseacab.service;
 
-import com.chooseacab.model.FareDetails;
-import com.chooseacab.model.Location;
-import com.chooseacab.model.Operator;
-import com.chooseacab.model.RideDetails;
-import com.chooseacab.model.Type;
+import com.chooseacab.model.*;
 import com.chooseacab.repository.RideDetailsJpaRepository;
 import com.chooseacab.search.RideDetailsSearch;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+/**
+ * Test class for RideDetailsService.
+ */
 @Test
 public class RideDetailsServiceTest {
 
-  private RideDetailsJpaRepository rideDetailsJpaRepository;
+  private static RideDetailsJpaRepository rideDetailsJpaRepository;
 
   @BeforeTest
-  public void setup() {
+  public final void setup() {
     rideDetailsJpaRepository = mock(RideDetailsJpaRepository.class);
   }
 
+  /**
+   * Test for search.
+   */
   @Test
-  public void testSearch() {
+  public final void testSearch() {
     final Location sourceLocation = new Location();
     sourceLocation.setName("SRC_LOC1");
 
@@ -48,7 +45,7 @@ public class RideDetailsServiceTest {
     final FareDetails fareDetails = new FareDetails();
     fareDetails.setOperator(operator);
     fareDetails.setType(type);
-    fareDetails.setFare(12.33);
+    fareDetails.setFare(12d);
     fareDetails.setDiscount(2);
 
     final RideDetails rideDetails = new RideDetails();

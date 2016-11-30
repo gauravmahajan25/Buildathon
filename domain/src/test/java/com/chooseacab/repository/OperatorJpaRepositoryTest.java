@@ -2,7 +2,6 @@ package com.chooseacab.repository;
 
 import com.chooseacab.model.Operator;
 import com.chooseacab.repository.impl.OperatorAbstractJpaRepositoryImpl;
-
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
@@ -14,19 +13,17 @@ import java.util.Collection;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.*;
 
 /**
  * Test class for Operator Repository.
  */
 public class OperatorJpaRepositoryTest {
 
-	final OperatorAbstractJpaRepositoryImpl operatorJpaRepository = new OperatorAbstractJpaRepositoryImpl();
+	final static OperatorAbstractJpaRepositoryImpl operatorJpaRepository = new OperatorAbstractJpaRepositoryImpl();
 
 	@BeforeClass
-	protected void setUp() throws Exception {
+	protected final void setUp() {
 		MockitoAnnotations.initMocks(this);
 	}
 
@@ -34,7 +31,7 @@ public class OperatorJpaRepositoryTest {
 	 * Test case for get Operators.
 	 */
 	@Test
-	public void testGetOperators() {
+	public final void testGetOperators() {
 		final Criteria criteria = mock(Criteria.class);
 		final OperatorAbstractJpaRepositoryImpl spy = spy(operatorJpaRepository);
 
