@@ -10,7 +10,7 @@ import java.util.List;
 public interface LocationService {
 
 	/**
-     * Get All Locations
+     * Get All Locations.
      * @return list of locations
      */
     List<Location> getAllLocations();

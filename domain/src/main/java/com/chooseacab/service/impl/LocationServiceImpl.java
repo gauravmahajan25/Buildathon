@@ -10,17 +10,32 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Location Service Implementation class.
+ * Provides api to get all Locations.
+ */
 @Service
 @Transactional
 public class LocationServiceImpl implements LocationService {
 
+	/**
+	 * LocationJpaRepository property for Location service.
+	 */
     private LocationJpaRepository locationJpaRepository;
 
+    /**
+     * Constructor to initialize LocationJpaRepository.
+     * @param LocationJpaRepository
+     */
     @Autowired
     public LocationServiceImpl(final LocationJpaRepository locationJpaRepository) {
         this.locationJpaRepository = locationJpaRepository;
     }
 
+    /**
+     * Get All Locations.
+     * @return List - list of locaitons.
+     */
     @Override
     public List<Location> getAllLocations(){
         return locationJpaRepository.getAllLocations();

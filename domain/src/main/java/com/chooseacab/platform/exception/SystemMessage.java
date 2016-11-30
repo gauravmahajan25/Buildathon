@@ -14,7 +14,7 @@ public class SystemMessage {
   private final String message;
   
   /**
-   * argument constructor with id, code and message
+   * argument constructor with id, code and message.
    * @param id id to be shown
    * @param code code to be shown
    * @param message message to be shown
@@ -26,7 +26,7 @@ public class SystemMessage {
   }
   
   /**
-   * argument constructor with message
+   * argument constructor with message.
    * @param message message to be shown
    */
   public SystemMessage(final String message) {
@@ -77,21 +77,21 @@ public class SystemMessage {
                                                       null));
   }
   /**
-   * get the id
+   * get the id.
    * @return id
    */
   public String getId() {
     return id;
   }
   /**
-   * get the code
+   * get the code.
    * @return code
    */
   public String getCode() {
     return code;
   }
   /**
-   * get the message
+   * get the message.
    * @return message
    */
   public String getMessage() {

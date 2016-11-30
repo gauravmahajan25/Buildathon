@@ -5,13 +5,13 @@ package com.chooseacab.platform.exception;
  */
 public class NoSuchEntityException extends RuntimeException {
 	/**
-	 * default constructor
+	 * default constructor.
 	 */
     public NoSuchEntityException() {
     	//default constructor
     }
     /**
-     * argument constructor with message
+     * argument constructor with message.
      * @param message
      */
     public NoSuchEntityException(final String message) {

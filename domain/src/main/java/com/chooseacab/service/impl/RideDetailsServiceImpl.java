@@ -11,17 +11,33 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * RideDetails Service Implementation class.
+ * Provides api to search Ride Details.
+ */
 @Service
 @Transactional
 public class RideDetailsServiceImpl implements RideDetailsService {
 
-    private RideDetailsJpaRepository rideDetailsJpaRepository;
+	/**
+	 * Property for RideDetailsJpaRepository.
+	 */
+     private RideDetailsJpaRepository rideDetailsJpaRepository;
 
-    @Autowired
+     /**
+      * Constructor to initialize RideDetailsJpaRepository.
+      * @param RideDetailsJpaRepository
+      */
+     @Autowired
     public RideDetailsServiceImpl(final RideDetailsJpaRepository rideDetailsJpaRepository) {
         this.rideDetailsJpaRepository = rideDetailsJpaRepository;
     }
 
+     /**
+      * Search Ride Details.
+      * @param RideDetailsSearch
+      * @return List - list of Ride Details.
+      */
     @Override
     public List<RideDetails> searchRideDetails(RideDetailsSearch rideDetailsSearch) {
         return rideDetailsJpaRepository.searchRideDetails(rideDetailsSearch);

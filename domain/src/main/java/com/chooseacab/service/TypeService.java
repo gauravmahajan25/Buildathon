@@ -10,7 +10,7 @@ import java.util.List;
 public interface TypeService {
 
 	/**
-     * Get Types
+     * Get Types.
      * @return list of types
      */
     List<Type> getTypes();

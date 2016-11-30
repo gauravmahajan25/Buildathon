@@ -1,7 +1,7 @@
 package com.chooseacab.platform.exception;
 
 /**
- * SystemMessageException
+ * SystemMessageException.
  *
  * Wraps a SystemMessage in a RuntimeException so if an error occurs in the API
  * that requires a predefined system message to be returned, the upper layers can
@@ -13,7 +13,7 @@ public class SystemMessageException extends RuntimeException {
   private final SystemMessage systemMessage;
 
   /**
-   * argument constructor with systemMessage
+   * argument constructor with systemMessage.
    * @param systemMessage
    */
   public SystemMessageException(final SystemMessage systemMessage) {
@@ -21,7 +21,7 @@ public class SystemMessageException extends RuntimeException {
     this.systemMessage = systemMessage;
   }
   /**
-   * argument constructor with cause and systemMessage
+   * argument constructor with cause and systemMessage.
    * @param cause
    * @param systemMessage
    */
@@ -31,7 +31,7 @@ public class SystemMessageException extends RuntimeException {
     this.initCause(cause);
   }
   /**
-   * get the system message
+   * get the system message.
    * @return system message
    */
   public SystemMessage getSystemMessage() {

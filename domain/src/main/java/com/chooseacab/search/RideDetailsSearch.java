@@ -34,7 +34,7 @@ public class RideDetailsSearch {
 
   /**
    * Method to retrieve Source Id.
-   * 
+   * @return Long - Soruce Id
    */
   public final Long getSourceId() {
     return sourceId;
@@ -42,7 +42,7 @@ public class RideDetailsSearch {
 
   /**
    * Method to retrieve Destination Id.
-   * 
+   * @return Long - Destination Id
    */
   public final Long getDestinationId() {
     return destinationId;
@@ -50,7 +50,7 @@ public class RideDetailsSearch {
 
   /**
    * Method to retrieve Set of Operator Ids.
-   * 
+   * @return Set - Operator Ids
    */
   public final Set<Long> getOperatorIds() {
     return operatorIds;
@@ -58,7 +58,7 @@ public class RideDetailsSearch {
 
   /**
    * Method to retrieve Set of Type Ids.
-   * 
+   * @return Set - Type Ids
    */
   public final Set<Long> getTypeIds() {
     return typeIds;
