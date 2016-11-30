@@ -3,19 +3,33 @@ package com.chooseacab.platform.exception;
 import com.chooseacab.util.ResourceBundleEnum;
 
 import org.springframework.context.MessageSource;
-
+/**
+ * Format the message for exception. 
+ *
+ */
 public class SystemMessage {
 
   private final String id;
   private final String code;
   private final String message;
-  public SystemMessage(String id, String code, String message) {
+  
+  /**
+   * argument constructor with id, code and message.
+   * @param id id to be shown
+   * @param code code to be shown
+   * @param message message to be shown
+   */
+  public SystemMessage(final String id, final String code, final String message) {
     this.id = id;
     this.code = code;
     this.message = message;
   }
-
-  public SystemMessage(String message) {
+  
+  /**
+   * argument constructor with message.
+   * @param message message to be shown
+   */
+  public SystemMessage(final String message) {
     this.id = null;
     this.code = null;
     this.message = message;
@@ -30,7 +44,7 @@ public class SystemMessage {
    * @param messageParams An array of Strings that will be filled in for params within the message.
    * @return A SystemMessage object with the ID, code, and text set based on the rules defined above.
    */
-  public static SystemMessage createSystemMessage(MessageSource messageSource, String messageEnumName, String... messageParams) {
+  public static SystemMessage createSystemMessage(final MessageSource messageSource, final String messageEnumName, final String... messageParams) {
     if (messageEnumName == null) {
       return createSystemMessage(messageSource, ResourceBundleEnum.DEFAULT, messageParams);
     }
@@ -50,7 +64,7 @@ public class SystemMessage {
    * @param messageParams An array of Strings that will be filled in for params within the message.
    * @return A SystemMessage object with the ID, code, and text set based on the given ResourceBundleEnum.
    */
-  public static SystemMessage createSystemMessage(MessageSource messageSource, final ResourceBundleEnum messageEnum, String... messageParams) {
+  public static SystemMessage createSystemMessage(final MessageSource messageSource, final ResourceBundleEnum messageEnum, final String... messageParams) {	  
     if (messageEnum == null) {
       return createSystemMessage(messageSource, ResourceBundleEnum.DEFAULT);
     }
@@ -62,15 +76,24 @@ public class SystemMessage {
                                                       ResourceBundleEnum.DEFAULT.getMessageId(),
                                                       null));
   }
-
+  /**
+   * get the id.
+   * @return id
+   */
   public String getId() {
     return id;
   }
-
+  /**
+   * get the code.
+   * @return code
+   */
   public String getCode() {
     return code;
   }
-
+  /**
+   * get the message.
+   * @return message
+   */
   public String getMessage() {
     return message;
   }

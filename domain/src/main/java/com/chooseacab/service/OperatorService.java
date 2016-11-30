@@ -9,5 +9,9 @@ import java.util.List;
  */
 public interface OperatorService {
 
+	/**
+     * Get Operators.
+     * @return list of operators
+     */
     List<Operator> getOperators();
 }

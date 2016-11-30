@@ -2,7 +2,6 @@ package com.chooseacab.rest.operator;
 
 import com.chooseacab.model.Operator;
 import com.chooseacab.service.OperatorService;
-
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.util.ReflectionTestUtils;
@@ -22,19 +21,25 @@ import static org.mockito.Mockito.when;
 public class OperatorRepresentationServiceImplTest {
 
   @Mock
-  private OperatorService operatorService;
+  private static OperatorService operatorService;
 
-  private OperatorRepresentationService operatorRepresentationService;
+  private static OperatorRepresentationService operatorRepresentationService;
 
+  /**
+   * Setup before test.
+   */
   @BeforeClass
-  public void beforeTest() {
+  public final void beforeTest() {
     MockitoAnnotations.initMocks(this);
     operatorRepresentationService = new OperatorRepresentationServiceImpl();
     ReflectionTestUtils.setField(operatorRepresentationService, "operatorService", operatorService);
   }
 
+  /**
+   * Test Get Operators.
+   */
   @Test
-  public void testGetOperators() {
+  public final void testGetOperators() {
 
     final Operator operator = new Operator();
     operator.setName("OP1");

@@ -9,11 +9,17 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Ride Details Repostory class.
+ * 
+ */
+
 @Repository
 public class RideDetailsAbstractJpaRepositoryImpl extends AbstractJpaRepositoryImpl<RideDetails>
     implements RideDetailsJpaRepository {
 
     /**
+     * Search Ride Details based on search criteria.
      * @param rideDetailsSearch
      * @return list of ride details.
      */
@@ -24,6 +30,11 @@ public class RideDetailsAbstractJpaRepositoryImpl extends AbstractJpaRepositoryI
         return criteria.list();
     }
 
+    /**
+     * Create Search Criteria.
+     * @param rideDetailsSearch - rideDetailsSearch parameter.
+     * @return Criteria - Search Criteria.
+     */
     private Criteria createSearchCriteria(final RideDetailsSearch rideDetailsSearch){
         final Criteria criteria = createCriteria();
 

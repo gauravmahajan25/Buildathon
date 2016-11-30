@@ -77,6 +77,7 @@ public abstract class AbstractJpaRepositoryImpl<T> implements JpaRepository<T> {
 	}
 
 	/**
+	 * Get Entity Manager.
 	 * @return the entityManager
 	 */
 	public final EntityManager getEntityManager() {
@@ -84,7 +85,7 @@ public abstract class AbstractJpaRepositoryImpl<T> implements JpaRepository<T> {
 	}
 
 	/**
-	 *
+	 *Create Criteria.
 	 * @param pSalias
 	 * @return criteria Criteria
      */

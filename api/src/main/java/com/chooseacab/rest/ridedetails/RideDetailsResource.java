@@ -44,7 +44,14 @@ public class RideDetailsResource {
 
   @Autowired
   private RideDetailsRepresentationService rideDetailsRepresentationService;
-
+  /**
+   * provides ride details based on source, destination and operator selection.
+   * @param sourceId source location id
+   * @param destinationId destination location id
+   * @param operatorIds operator id
+   * @param typeIds type id
+   * @return ride details response
+   */
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public Response search(@QueryParam("sourceId") final Long sourceId,

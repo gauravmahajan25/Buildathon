@@ -36,7 +36,7 @@ public class LocationResource {
   private LocationRepresentationService locationRepresentationService;
 
   /**
-   * Get All locations
+   * Get All locations.
    * @return response Response Builder
    */
   @GET
@@ -81,15 +81,15 @@ public class LocationResource {
   }
 
   /**
-   * Get Message source
-   * @return
+   * Get Message source.
+   * @return MessageSource
    */
   public MessageSource getMessageSource() {
     return messageSource;
   }
 
   /**
-   * Set Message source
+   * Set Message source.
    * @param messageSource
    */
   public void setMessageSource(MessageSource messageSource) {
@@ -97,15 +97,15 @@ public class LocationResource {
   }
 
   /**
-   * Get Location representation service
-   * @return
+   * Get Location representation service.
+   * @return LocationRepresentationService
    */
   public LocationRepresentationService getLocationRepresentationService() {
     return locationRepresentationService;
   }
 
   /**
-   * Set Location representation service
+   * Set Location representation service.
    * @param locationRepresentationService
    */
   public void setLocationRepresentationService(LocationRepresentationService locationRepresentationService) {

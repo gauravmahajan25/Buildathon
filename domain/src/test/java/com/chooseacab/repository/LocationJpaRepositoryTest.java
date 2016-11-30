@@ -2,7 +2,6 @@ package com.chooseacab.repository;
 
 import com.chooseacab.model.Location;
 import com.chooseacab.repository.impl.LocationAbstractJpaRepositoryImpl;
-
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
@@ -14,23 +13,21 @@ import java.util.Collection;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.*;
 
-/*
+/**
  * Test Class for Location Repository.
  */
 public class LocationJpaRepositoryTest {
 
-    LocationAbstractJpaRepositoryImpl locationJpaRepository = new LocationAbstractJpaRepositoryImpl();
+    private static LocationAbstractJpaRepositoryImpl locationJpaRepository = new LocationAbstractJpaRepositoryImpl();
 
     @BeforeClass
-    protected void setUp() throws Exception {
+    protected final void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
-    /*
+    /**
      * Test case to test get all Location methods.
      */
     @Test
@@ -40,7 +37,7 @@ public class LocationJpaRepositoryTest {
 
         final Location location = new Location();
         location.setName("LOC1");
-        location.setZipCode(10101);
+        location.setZipCode(100);
 
         final List<Location> expected= new ArrayList<>();
         expected.add(location);

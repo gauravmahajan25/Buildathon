@@ -10,10 +10,19 @@ import java.util.List;
  */
 public class LocationRepresentation {
 
+/**
+ * Property for Location Id.
+ */
   private Long id;
 
+  /**
+   * Property for Location Name.
+   */
   private String name;
 
+  /**
+   * Property for Location Zip code.
+   */
   private Integer zipCode;
 
   /**
@@ -23,11 +32,11 @@ public class LocationRepresentation {
   }
   
   /**
-   * Instates Location Reprentation for location passed.
+   * Instantiates Location Reprentation for location passed.
    * @param location for which the representation needs to be generated.
    * 
    */
-  public LocationRepresentation(Location location){
+  public LocationRepresentation(final Location location){
     setId(location.getId());
     setName(location.getName());
     setZipCode(location.getZipCode());
@@ -42,15 +51,15 @@ public class LocationRepresentation {
   }
 
   /**
-   * Get id
+   * Get id.
    * @param id
    */
-  public final void setId(Long id) {
+  public final void setId(final Long id) {
     this.id = id;
   }
 
   /**
-   * Get name
+   * Get name.
    * @return name
    */
   public final String getName() {
@@ -58,26 +67,26 @@ public class LocationRepresentation {
   }
 
   /**
-   * Set name
+   * Set name.
    * @param name
    */
-  public final void setName(String name) {
+  public final void setName(final String name) {
     this.name = name;
   }
 
   /**
-   * Get zip code
-   * @return
+   * Get zip code.
+   * @return Integer - zipcode.
    */
   public final Integer getZipCode() {
     return zipCode;
   }
 
   /**
-   * Set zip code
+   * Set zip code.
    * @param zipCode
    */
-  public final void setZipCode(Integer zipCode) {
+  public final void setZipCode(final Integer zipCode) {
     this.zipCode = zipCode;
   }
 

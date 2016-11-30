@@ -1,41 +1,33 @@
 package com.chooseacab.repository;
 
-import com.chooseacab.model.FareDetails;
-import com.chooseacab.model.Location;
-import com.chooseacab.model.Operator;
-import com.chooseacab.model.RideDetails;
-import com.chooseacab.model.Type;
+import com.chooseacab.model.*;
 import com.chooseacab.repository.impl.RideDetailsAbstractJpaRepositoryImpl;
 import com.chooseacab.search.RideDetailsSearch;
-
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.*;
 
 public class RideDetailsJpaRepositoryTest {
 
-    RideDetailsAbstractJpaRepositoryImpl rideDetailsJpaRepository = new RideDetailsAbstractJpaRepositoryImpl();
+    private static RideDetailsAbstractJpaRepositoryImpl rideDetailsJpaRepository = new RideDetailsAbstractJpaRepositoryImpl();
 
     @BeforeClass
-    protected void setUp() throws Exception {
+    protected final void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
+    /**
+     * Test search ride details.
+     */
     @Test
-    public void testSearchRideDetails() {
+    public final void testSearchRideDetails() {
         Criteria criteria = mock(Criteria.class);
         RideDetailsAbstractJpaRepositoryImpl spy = spy(rideDetailsJpaRepository);
 
@@ -54,7 +46,7 @@ public class RideDetailsJpaRepositoryTest {
         final FareDetails fareDetails = new FareDetails();
         fareDetails.setOperator(operator);
         fareDetails.setType(type);
-        fareDetails.setFare(12.33);
+        fareDetails.setFare(12d);
         fareDetails.setDiscount(2);
 
         final RideDetails rideDetails = new RideDetails();

@@ -13,47 +13,78 @@ import java.io.Serializable;
 @Table(name = "CC_OPERATORS")
 public class Operator implements Serializable {
 
+	/**
+     * Propery for ID Column for CC_OPERATORS.
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Propery for NAME Column for CC_OPERATORS.
+     */
     @Column(name = "NAME")
     private String name;
 
-    public Long getId() {
+    /**
+     * Method to get Id for CC_OPERATORS record.
+     * @return Long - Id for CC_OPERATORS record.
+     */
+    public final Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    /**
+     * Method to set Id for CC_OPERATORS record.
+     * @param id - Id for CC_OPERATORS record.
+     */
+    public final void setId(final Long id) {
         this.id = id;
     }
 
-    public String getName() {
+    /**
+     * Method to get Name for CC_OPERATORS record.
+     * @return String - name for CC_OPERATORS record.
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     * Method to set name for CC_OPERATORS record.
+     * @param name - name for CC_OPERATORS record.
+     */
+    public final void setName(final String name) {
         this.name = name;
     }
 
+    /**
+     * Overriding the equals method to compare two records for Operators.
+     * @param object - Object to compare.
+     * @return boolean - True/False based on Operator instances are equals or not.
+     */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object object) {
+        if (this == object) {
             return true;
         }
 
-        if (!(o instanceof Operator)) {
+        if (!(object instanceof Operator)) {
             return false;
         }
 
-        final Operator other = (Operator) o;
+        final Operator other = (Operator) object;
 
         return new EqualsBuilder()
                 .append(this.getName(), other.getName())
                 .isEquals();
     }
 
+    /**
+     * Overriding the hshcode method to return random hashcode value for Operator object.
+     * @return int - hshcode value.
+     */
     @Override
     public int hashCode() {
         return new HashCodeBuilder()

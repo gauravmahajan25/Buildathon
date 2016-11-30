@@ -7,11 +7,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Location Repostory class.
+ * 
+ */
 @Repository
 public class LocationAbstractJpaRepositoryImpl extends AbstractJpaRepositoryImpl<Location>
                     implements LocationJpaRepository {
 
     /**
+     * Get All Locations.
      * @return list of locations.
      */
     @Override

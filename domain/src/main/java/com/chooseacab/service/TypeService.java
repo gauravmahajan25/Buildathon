@@ -9,5 +9,9 @@ import java.util.List;
  */
 public interface TypeService {
 
+	/**
+     * Get Types.
+     * @return list of types
+     */
     List<Type> getTypes();
 }

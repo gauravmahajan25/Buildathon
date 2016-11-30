@@ -10,8 +10,8 @@ import java.util.List;
 public interface RideDetailsRepresentationService {
 
 	/**
-	 * Retrieves the List of Ride Details based on Searach criteria.
-	 * @param rideDetailsSearch
+	 * Retrieves the List of Ride Details based on Search criteria.
+	 * @param rideDetailsSearch ride details search object
 	 * @return List- List of Ride Details.
 	 */
     List<RideDetailsRepresentation> searchRideDetails(RideDetailsSearch rideDetailsSearch);

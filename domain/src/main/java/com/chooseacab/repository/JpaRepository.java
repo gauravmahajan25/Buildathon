@@ -2,7 +2,7 @@ package com.chooseacab.repository;
 
 import java.util.Collection;
 
-/*
+/**
  * Common JPA repository.
  */
 public interface JpaRepository<T>
