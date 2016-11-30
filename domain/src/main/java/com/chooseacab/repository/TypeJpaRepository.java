@@ -10,7 +10,7 @@ import java.util.List;
 public interface TypeJpaRepository extends JpaRepository<Type> {
 
   /**
-   * Get All available Types
+   * Get All available Types.
    * @return list of types
    */
   List<Type> getTypes();

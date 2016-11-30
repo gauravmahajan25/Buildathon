@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
- * A test class for Type Resource
+ * A test class for Type Resource.
  */
 public class TypeResourceTest extends AbstractTestNGJerseyDBUnitTest {
 
@@ -25,7 +25,7 @@ public class TypeResourceTest extends AbstractTestNGJerseyDBUnitTest {
   }
 
   /**
-   * Test for End Point Name
+   * Test for End Point Name.
    */
   @Test
   public void testEndpointName() {

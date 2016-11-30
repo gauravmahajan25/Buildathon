@@ -36,7 +36,7 @@ public class LocationResource {
   private LocationRepresentationService locationRepresentationService;
 
   /**
-   * Get All locations
+   * Get All locations.
    * @return response Response Builder
    */
   @GET

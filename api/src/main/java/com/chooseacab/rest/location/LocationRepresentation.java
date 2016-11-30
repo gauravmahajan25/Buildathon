@@ -11,17 +11,17 @@ import java.util.List;
 public class LocationRepresentation {
 
 /**
- * Proerty for Location Id.
+ * Property for Location Id.
  */
   private Long id;
 
   /**
-   * Proerty for Location Name.
+   * Property for Location Name.
    */
   private String name;
 
   /**
-   * Proerty for Location Zipcode.
+   * Property for Location Zip code.
    */
   private Integer zipCode;
 

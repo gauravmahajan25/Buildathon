@@ -10,7 +10,7 @@ import java.util.List;
 public interface LocationJpaRepository extends JpaRepository<Location> {
 
   /**
-   * Get All available locations
+   * Get All available locations.
    * @return list of locations
    */
   List<Location> getAllLocations();

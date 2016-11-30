@@ -11,7 +11,7 @@ import java.util.List;
 public interface RideDetailsJpaRepository extends JpaRepository<RideDetails> {
 
   /**
-   * Search Ride details
+   * Search Ride details.
    * @return list of rideDetails
    */
   List<RideDetails> searchRideDetails(RideDetailsSearch rideDetailsSearch);

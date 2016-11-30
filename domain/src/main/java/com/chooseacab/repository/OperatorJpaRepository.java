@@ -10,7 +10,7 @@ import java.util.List;
 public interface OperatorJpaRepository extends JpaRepository<Operator> {
 
   /**
-   * Get All available Operator
+   * Get All available Operator.
    * @return list of operators
    */
   List<Operator> getOperators();
