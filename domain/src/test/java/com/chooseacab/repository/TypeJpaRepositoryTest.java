@@ -2,7 +2,6 @@ package com.chooseacab.repository;
 
 import com.chooseacab.model.Type;
 import com.chooseacab.repository.impl.TypeAbstractJpaRepositoryImpl;
-
 import org.hibernate.Criteria;
 import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
@@ -14,24 +13,25 @@ import java.util.Collection;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.*;
 
 /**
  * Test class for Type Repository.
  */
 public class TypeJpaRepositoryTest {
 
-  TypeAbstractJpaRepositoryImpl typeJpaRepository = new TypeAbstractJpaRepositoryImpl();
+  private static TypeAbstractJpaRepositoryImpl typeJpaRepository = new TypeAbstractJpaRepositoryImpl();
 
   @BeforeClass
-  protected void setUp() throws Exception {
+  protected final void setUp() {
     MockitoAnnotations.initMocks(this);
   }
 
+  /**
+   * Test case to test get types.
+   */
   @Test
-  public void testGetTypes() {
+  public final void testGetTypes() {
     final Criteria criteria = mock(Criteria.class);
     TypeAbstractJpaRepositoryImpl spy = spy(typeJpaRepository);
 

@@ -12,14 +12,14 @@ public enum ResourceBundleEnum {
   NOT_FOUND("not.found")
   ;
 
-  private static final Map<String, ResourceBundleEnum> resourceBundleEnumsByMessageId = new HashMap<>(ResourceBundleEnum.values().length);
+  private static final Map<String, ResourceBundleEnum> ResourceBundleEnumsByMessageId = new HashMap<>(ResourceBundleEnum.values().length);
 
   /**
    * Static block to initialize resource bundle messages.
    */
   static {
     for (ResourceBundleEnum e : ResourceBundleEnum.values()) {
-      resourceBundleEnumsByMessageId.put(e.getMessageId(), e);
+      ResourceBundleEnumsByMessageId.put(e.getMessageId(), e);
     }
   }
 
@@ -42,18 +42,5 @@ public enum ResourceBundleEnum {
    */
   public String getMessageId() {
     return this.messageId;
-  }
-  
-  /**
-   * Get Resource Bundle Enum for a message id.
-   * @param messageId.
-   * @return ResourceBundleEnum - resourcebundleEnum.
-   */
-  public static ResourceBundleEnum fromMessageId(final String messageId) {
-    ResourceBundleEnum resourceBundleEnum = resourceBundleEnumsByMessageId.get(messageId);
-    if (resourceBundleEnum == null) {
-      throw new IllegalArgumentException("No ResourceBundleEnum exists with message ID: " + messageId);
-    }
-    return resourceBundleEnum;
   }
 }

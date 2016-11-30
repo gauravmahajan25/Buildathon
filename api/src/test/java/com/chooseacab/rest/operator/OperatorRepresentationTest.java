@@ -12,7 +12,7 @@ public class OperatorRepresentationTest {
    * Test case for Operator Name.
    */
   @Test
-  public void testOperatorName() {
+  public final void testOperatorName() {
     final OperatorRepresentation representation = new OperatorRepresentation();
     representation.setName("OLA");
 
@@ -22,12 +22,12 @@ public class OperatorRepresentationTest {
   }
 
   /**
-   * Test case for Operator Id
+   * Test case for Operator Id.
    */
   @Test
-  public void testOperatorId() {
+  public final void testOperatorId() {
     final OperatorRepresentation representation = new OperatorRepresentation();
-    representation.setId(101l);
+    representation.setId(100L);
 
     final long operatorId = representation.getId();
 
