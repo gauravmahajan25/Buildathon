@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<dataset>
+    <CC_OPERATORS ID="1001" NAME="UBAR" />
+    <CC_OPERATORS ID="1002" NAME="OLA" />
+
+    <CC_OPERATORS/>
+</dataset>
