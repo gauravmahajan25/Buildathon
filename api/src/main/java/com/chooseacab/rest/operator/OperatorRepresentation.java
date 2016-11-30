@@ -10,19 +10,25 @@ import java.util.List;
  */
 public class OperatorRepresentation {
 
+	/**
+	 * Property for Operator Id.
+	 */
 	private Long id;
 
+	/**
+	 * Property for Operator Name.
+	 */
 	private String name;
 	
 	/**
-	 * default constructor
+	 * default constructor.
 	 */
 	public OperatorRepresentation() {
 		// default constructor
 	}
 
 	/**
-	 * Constructor to instantiate Oprator Representation with Operator parameters
+	 * Constructor to instantiate Oprator Representation with Operator parameters.
 	 * @param operator operator instance
 	 */
 	public OperatorRepresentation(final Operator operator) {
@@ -30,28 +36,28 @@ public class OperatorRepresentation {
 		setName(operator.getName());
 	}
 	/**
-	 * get the id
+	 * get the id.
 	 * @return id
 	 */
 	public Long getId() {
 		return id;
 	}
 	/**
-	 * set the id
+	 * set the id.
 	 * @param id
 	 */
 	public void setId(final Long id) {
 		this.id = id;
 	}
 	/**
-	 * get the name
+	 * get the name.
 	 * @return name
 	 */
 	public String getName() {
 		return name;
 	}
 	/**
-	 * set the name
+	 * set the name.
 	 * @param name
 	 */
 	public void setName(final String name) {

@@ -12,7 +12,7 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 
 /**
- * Implemntation of Operator Representation Service.
+ * Implementation of Operator Representation Service.
  */
 @Service
 @Transactional
@@ -23,6 +23,10 @@ public class OperatorRepresentationServiceImpl implements OperatorRepresentation
     @Autowired
     protected OperatorService operatorService;
 
+    /**
+     * Get Operators.
+     * @return List - list of operators.
+     */
     @Override
     public List<OperatorRepresentation> getOperators() {
         LOGGER.debug("Entering OperatorRepresentationServiceImpl.getOperators");

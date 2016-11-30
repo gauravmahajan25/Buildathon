@@ -42,7 +42,7 @@ public class OperatorResource {
   private OperatorRepresentationService operatorRepresentationService;
   
   /**
-   * get the operators
+   * get the operators.
    * @return response object
    */
   @GET

@@ -10,14 +10,29 @@ import java.util.List;
  */
 public class RideDetailsRepresentation {
 
+/**
+ * Property for Ridedetails id.
+ */
   private Long id;
 
+  /**
+   * Property for Ridedetails Operator Name.
+   */
   private String operatorName;
 
+  /**
+   * Property for Ridedetails Type Name.
+   */
   private String typeName;
-
+  
+  /**
+   * Property for Ridedetails Fare.
+   */
   private Double fare;
 
+  /**
+   * Property for Ridedetails discount.
+   */
   private Integer discount;
   
   /**
@@ -39,70 +54,70 @@ public class RideDetailsRepresentation {
     setDiscount(rideDetails.getFareDetails().getDiscount());
   }
   /**
-   * get the rider details id
+   * get the rider details id.
    * @return rider details id
    */
   public Long getId() {
     return id;
   }
   /**
-   * set the rider details id
+   * set the rider details id.
    * @param id rider details id
    */
-  public void setId(Long id) {
+  public void setId(final Long id) {
     this.id = id;
   }
   /**
-   * get the operator name
+   * get the operator name.
    * @return operator name
    */
   public String getOperatorName() {
     return operatorName;
   }
   /**
-   * set the operator name
+   * set the operator name.
    * @param operatorName 
    */
-  public void setOperatorName(String operatorName) {
+  public void setOperatorName(final String operatorName) {
     this.operatorName = operatorName;
   }
   /**
-   * get type name
+   * get type name.
    * @return type name
    */
   public String getTypeName() {
     return typeName;
   }
   /**
-   * set the type name
+   * set the type name.
    * @param typeName
    */
-  public void setTypeName(String typeName) {
+  public void setTypeName(final String typeName) {
     this.typeName = typeName;
   }
   /**
-   * get the fare
+   * get the fare.
    * @return fare
    */
   public Double getFare() {
     return fare;
   }
   /**
-   * set the fare
+   * set the fare.
    * @param fare
    */
-  public void setFare(Double fare) {
+  public void setFare(final Double fare) {
     this.fare = fare;
   }
   /**
-   * get the discount
+   * get the discount.
    * @return discount
    */
   public Integer getDiscount() {
     return discount;
   }
   /**
-   * set the doscount
+   * set the doscount.
    * @param discount
    */
   public void setDiscount(Integer discount) {

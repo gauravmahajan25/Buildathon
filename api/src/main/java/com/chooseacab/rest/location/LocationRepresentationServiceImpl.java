@@ -24,6 +24,10 @@ public class LocationRepresentationServiceImpl implements LocationRepresentation
     @Autowired
     private transient LocationService locationService;
 
+    /**
+     * Get All Locations.
+     * @return List - list of LocationRepresentation
+     */
     @Override
     public final List<LocationRepresentation> getAllLocations() {
         LOGGER.debug("Entering LocationRepresentationServiceImpl.getAllLocations");
