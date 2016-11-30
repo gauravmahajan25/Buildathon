@@ -29,14 +29,14 @@ import static org.mockito.Mockito.when;
 public class RideDetailsRepresentationServiceImplTest {
 
   @Mock
-  private RideDetailsService rideDetailsService;
+  private static RideDetailsService rideDetailsService;
 
-  private RideDetailsRepresentationService rideDetailsRepresentationService;
+  private static RideDetailsRepresentationService rideDetailsRepresentationService;
   /**
-   * before test initialization
+   * before test initialization.
    */
   @BeforeClass
-  public void beforeTest() {
+  public final void beforeTest() {
     MockitoAnnotations.initMocks(this);
     rideDetailsRepresentationService =
         new RideDetailsRepresentationServiceImpl();
@@ -48,7 +48,7 @@ public class RideDetailsRepresentationServiceImplTest {
    * test for search details.
    */
   @Test
-  public void searchTest() {
+  public final void searchTest() {
 
     final Location sourceLocation = new Location();
     sourceLocation.setName("SRC_LOC1");
@@ -65,7 +65,7 @@ public class RideDetailsRepresentationServiceImplTest {
     final FareDetails fareDetails = new FareDetails();
     fareDetails.setOperator(operator);
     fareDetails.setType(type);
-    fareDetails.setFare(12.33);
+    fareDetails.setFare(12.33d);
     fareDetails.setDiscount(2);
 
     final RideDetails rideDetails = new RideDetails();
